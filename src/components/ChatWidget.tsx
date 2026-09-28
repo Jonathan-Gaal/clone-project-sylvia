@@ -14,11 +14,6 @@ import { findCitedMenuItems, menuHref } from "@/lib/menu";
  * (which loads last and wins class/element ties).
  */
 
-// Pulled from public/vendor/sylvias.css, not invented: #f15a24 is the site's
-// actual CTA button fill (.reservations a, .email-subscription a); #EC5823 is
-// its heading/hover accent. Panels are plain white — the site doesn't use tan.
-const ORANGE = "#f15a24";
-const ORANGE_ACCENT = "#EC5823";
 // The site's real nav-toggle pair, from the per-domain custom.css override
 // (loaded last in layout.tsx, above): #331F52 deep purple / #F5C552 gold,
 // used as an alternating bg/text pair for active nav states.
@@ -71,6 +66,8 @@ export default function ChatWidget() {
     <div id="sylvias-concierge">
       <style>{scopedCss}</style>
 
+      {open && <div className="sc-backdrop" aria-hidden="true" />}
+
       {open && (
         <section className="sc-panel" role="dialog" aria-label="Sylvia's Concierge chat">
           <button
@@ -82,11 +79,16 @@ export default function ChatWidget() {
             ×
           </button>
 
-          <div className="sc-messages" ref={scrollRef}>
-            <div className="sc-heading">
+          <div className="sc-heading">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img className="sc-heading-portrait" src="/sylvia-portrait.png" alt="Sylvia" />
+            <div>
               <div className="sc-title">Sylvia&apos;s Concierge</div>
               <div className="sc-subtitle">Menu, specials &amp; table booking</div>
             </div>
+          </div>
+
+          <div className="sc-messages" ref={scrollRef}>
             {messages.length === 0 ? (
               <div className="sc-empty">
                 <p className="sc-empty-lead">
@@ -193,22 +195,26 @@ export default function ChatWidget() {
         </section>
       )}
 
-      <button
-        type="button"
-        className="sc-launcher"
-        aria-label={open ? "Close Sylvia's Concierge" : "Open Sylvia's Concierge"}
-        aria-expanded={open}
-        onClick={() => setOpen((v) => !v)}
-      >
-        {open ? (
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        ) : (
-          <span>Chat</span>
-        )}
-      </button>
+      {!open && (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="sc-launcher-avatar" src="/sylvia-portrait.png" alt="" aria-hidden="true" />
+
+          <button
+            type="button"
+            className="sc-launcher"
+            aria-label="Open Sylvia's Concierge"
+            aria-expanded={open}
+            onClick={() => setOpen(true)}
+          >
+            <span>
+              Let&apos;s
+              <br />
+              chat!
+            </span>
+          </button>
+        </>
+      )}
     </div>
   );
 }
@@ -217,35 +223,56 @@ const scopedCss = `
 #sylvias-concierge { position: fixed; z-index: 2147483000; }
 #sylvias-concierge * { box-sizing: border-box; }
 
+/* Same column as .sc-panel (right:20px, same width), reaching 20px into
+   the navbar's own 160px band up to the page bottom — just the strip
+   above/below/behind the panel, not the whole page. Light touch: you can
+   still make out shapes, just not read them. */
+#sylvias-concierge .sc-backdrop {
+  position: fixed; top: 140px; right: 20px; bottom: 0;
+  width: min(380px, calc(100vw - 40px));
+  background: rgba(20,14,10,.22);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  pointer-events: none;
+  animation: sc-fade .18s ease-out;
+}
+@keyframes sc-fade { from { opacity: 0; } to { opacity: 1; } }
+
 /* Purple/gold is the site's real nav-toggle pair (custom.css), not the
    sylvias.css orange — used here so the launcher reads as "site chrome",
    not a bolted-on widget. */
 /* The launcher itself is the speech bubble: a circle with a small tail. */
 #sylvias-concierge .sc-launcher {
-  position: fixed; right: 20px; bottom: 20px;
-  width: 60px; height: 60px; padding: 0;
+  position: fixed; right: 20px; bottom: 80px;
+  width: 72px; height: 60px; padding: 0;
   /* A full circle (border-radius: 50%) curves away from its bounding box
      near the corners, so a tail anchored there floats with a visible gap.
      A rounded square keeps flat edges near the corner for the tail to
      actually touch. */
-  border: 1px solid ${GOLD_ACCENT}; border-radius: 14px; cursor: pointer;
+  border: 1px solid ${GOLD_ACCENT}; border-radius: 10px; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   background: ${PURPLE}; color: ${GOLD_ACCENT};
-  font-size: 14px; font-weight: 700; font-family: inherit;
+  font-family: inherit;
   box-shadow: 0 6px 20px rgba(0,0,0,.28);
 }
-#sylvias-concierge .sc-launcher svg { width: 22px; height: 22px; }
+/* "Chat with us" has to fit the fixed box without growing it — one word
+   per line (forced via <br/>, not width-based wrapping) so it can run a
+   bigger, readable size instead of shrinking to fit one line. */
+#sylvias-concierge .sc-launcher span {
+  font-size: 12.5px; font-weight: 700; line-height: 1.3; letter-spacing: .2px;
+  text-align: center;
+}
 /* Tail is two stacked triangles: a larger gold one (the "border") behind a
    smaller purple one (the fill), offset by the circle's border width. */
 #sylvias-concierge .sc-launcher::before {
-  content: ""; position: absolute; left: 16px; bottom: -8px;
+  content: ""; position: absolute; right: 11px; bottom: -8px;
   width: 0; height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-top: 9px solid ${GOLD_ACCENT};
 }
 #sylvias-concierge .sc-launcher::after {
-  content: ""; position: absolute; left: 17px; bottom: -6px;
+  content: ""; position: absolute; right: 12px; bottom: -6px;
   width: 0; height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
@@ -255,10 +282,24 @@ const scopedCss = `
 #sylvias-concierge .sc-launcher:hover::after { border-top-color: ${GOLD_ACCENT}; }
 #sylvias-concierge .sc-launcher:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
 
+/* Centered under the bubble (bubble spans right:20-92, center at 56). */
+#sylvias-concierge .sc-launcher-avatar {
+  position: fixed; right: 30px; bottom: 20px;
+  width: 52px; height: 52px; border-radius: 50%; object-fit: cover;
+  border: 2px solid ${PURPLE}; box-shadow: 0 6px 20px rgba(0,0,0,.28);
+}
+
 #sylvias-concierge .sc-panel {
-  position: fixed; right: 20px; bottom: 92px;
+  /* The launcher bubble + avatar are hidden while open (see JSX), so there's
+     no need to leave room for them here — drop back to the screen edge. */
+  position: fixed; right: 20px; bottom: 20px;
   width: min(380px, calc(100vw - 40px));
-  height: min(560px, calc(100vh - 120px));
+  /* The fixed navbar reserves 160px at the top of the page (see .pagecontent
+     padding-top in sylvias.css) — but this panel is position:fixed too, so
+     it won't respect that on its own. Cap height at 100vh minus the 20px
+     bottom offset, minus the navbar's real 160px, minus a 20px gap so the
+     panel clears the navbar by the same margin it keeps from the bottom. */
+  height: min(560px, calc(100vh - 185px));
   display: flex; flex-direction: column;
   background: #fff; color: ${INK};
   border-radius: 14px; overflow: hidden;
@@ -277,8 +318,15 @@ const scopedCss = `
   background: rgba(255,255,255,.75); backdrop-filter: blur(3px);
 }
 #sylvias-concierge .sc-close:hover { background: rgba(240,240,240,.95); }
+/* Sits outside .sc-messages so it stays put while messages scroll under it. */
 #sylvias-concierge .sc-heading {
-  padding: 2px 44px 12px 2px; margin-bottom: 8px; border-bottom: 1px solid #eee;
+  flex: 0 0 auto;
+  display: flex; align-items: center; gap: 10px;
+  padding: 16px 44px 12px 16px; border-bottom: 1px solid #eee;
+}
+#sylvias-concierge .sc-heading-portrait {
+  width: 40px; height: 40px; border-radius: 50%; object-fit: cover;
+  border: 2px solid ${PURPLE}; flex: 0 0 auto;
 }
 #sylvias-concierge .sc-title { font-size: 17px; font-weight: 700; color: ${INK}; }
 #sylvias-concierge .sc-subtitle { font-size: 12px; color: #666; margin-top: 2px; }
@@ -289,11 +337,11 @@ const scopedCss = `
 #sylvias-concierge .sc-empty-lead { font-size: 14px; line-height: 1.5; margin: 0 0 14px; }
 #sylvias-concierge .sc-suggests { display: flex; flex-direction: column; gap: 8px; }
 #sylvias-concierge .sc-suggest {
-  text-align: left; padding: 11px 13px; border: 1px solid ${ORANGE_ACCENT};
+  text-align: left; padding: 11px 13px; border: 1px solid ${PURPLE};
   background: #fff; color: ${INK}; border-radius: 10px; cursor: pointer;
   font-size: 13.5px; font-family: inherit; min-height: 44px;
 }
-#sylvias-concierge .sc-suggest:hover { background: #fdeee7; }
+#sylvias-concierge .sc-suggest:hover { background: #f2effb; }
 
 #sylvias-concierge .sc-msg { display: flex; flex-direction: column; gap: 8px; }
 #sylvias-concierge .sc-row { display: flex; }
@@ -304,22 +352,22 @@ const scopedCss = `
 #sylvias-concierge .sc-cards { display: flex; gap: 8px; overflow-x: auto; padding: 2px 1px 4px; }
 #sylvias-concierge .sc-card { flex: 0 0 auto; width: 128px; text-decoration: none; color: ${INK};
   border: 1px solid #eee; border-radius: 12px; background: #fff; overflow: hidden; }
-#sylvias-concierge .sc-card:hover { border-color: ${ORANGE_ACCENT}; box-shadow: 0 2px 10px rgba(0,0,0,.12); }
+#sylvias-concierge .sc-card:hover { border-color: ${PURPLE}; box-shadow: 0 2px 10px rgba(0,0,0,.12); }
 #sylvias-concierge .sc-card-img { display: block; width: 100%; height: 76px; object-fit: cover; background: #f2f2f2; }
 #sylvias-concierge .sc-card-noimg { display: flex; align-items: center; justify-content: center; font-size: 28px; }
 #sylvias-concierge .sc-card-name { display: block; font-size: 12px; line-height: 1.3; padding: 6px 8px 0; font-weight: 600; }
-#sylvias-concierge .sc-card-price { display: block; font-size: 12px; color: ${ORANGE_ACCENT}; font-weight: 700; padding: 2px 8px 8px; }
+#sylvias-concierge .sc-card-price { display: block; font-size: 12px; color: ${PURPLE}; font-weight: 700; padding: 2px 8px 8px; }
 #sylvias-concierge .sc-bubble {
   max-width: 82%; padding: 10px 13px; border-radius: 14px;
   font-size: 14px; line-height: 1.5; white-space: pre-wrap; word-wrap: break-word;
 }
-#sylvias-concierge .sc-user .sc-bubble { background: ${ORANGE}; color: #fff; border-bottom-right-radius: 4px; }
+#sylvias-concierge .sc-user .sc-bubble { background: ${PURPLE}; color: #fff; border-bottom-right-radius: 4px; }
 #sylvias-concierge .sc-assistant .sc-bubble { background: #f2f2f2; color: ${INK}; border-bottom-left-radius: 4px; }
 #sylvias-concierge .sc-error { background: #fbe3d8 !important; color: #7a2e12 !important; }
 
 #sylvias-concierge .sc-typing { display: inline-flex; gap: 4px; align-items: center; }
 #sylvias-concierge .sc-typing span {
-  width: 7px; height: 7px; border-radius: 50%; background: ${ORANGE};
+  width: 7px; height: 7px; border-radius: 50%; background: ${PURPLE};
   animation: sc-blink 1.2s infinite ease-in-out;
 }
 #sylvias-concierge .sc-typing span:nth-child(2) { animation-delay: .2s; }
@@ -330,13 +378,13 @@ const scopedCss = `
   display: flex; gap: 8px; padding: 12px; border-top: 1px solid #eee; background: #fff;
 }
 #sylvias-concierge .sc-input {
-  flex: 1; min-height: 44px; padding: 0 13px; border: 1px solid #ddd;
+  flex: 1; min-height: 44px; padding: 0 13px; border: 1px solid ${PURPLE};
   border-radius: 10px; font-size: 14px; font-family: inherit; color: ${INK}; background: #fff;
 }
-#sylvias-concierge .sc-input:focus-visible { outline: 2px solid ${ORANGE_ACCENT}; outline-offset: 0; border-color: ${ORANGE_ACCENT}; }
+#sylvias-concierge .sc-input:focus-visible { outline: 2px solid ${PURPLE}; outline-offset: 0; border-color: ${PURPLE}; }
 #sylvias-concierge .sc-send {
   min-height: 44px; padding: 0 18px; border: none; border-radius: 10px; cursor: pointer;
-  background: ${ORANGE}; color: #fff; font-size: 14px; font-weight: 700; font-family: inherit;
+  background: ${PURPLE}; color: #fff; font-size: 14px; font-weight: 700; font-family: inherit;
   text-transform: uppercase; letter-spacing: .04em;
 }
 #sylvias-concierge .sc-send:disabled { opacity: .5; cursor: not-allowed; }
