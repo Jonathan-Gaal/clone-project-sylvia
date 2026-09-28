@@ -1,0 +1,72 @@
+import "server-only";
+import { anthropic } from "@ai-sdk/anthropic";
+import { google } from "@ai-sdk/google";
+import type { LanguageModel } from "ai";
+import { HOURS_SUMMARY, RESTAURANT } from "./info";
+import { MAX_ONLINE_PARTY } from "./availability";
+
+/**
+ * Which LLM powers the concierge. Switch with CONCIERGE_PROVIDER=anthropic|google.
+ * Default is Google Gemini (free tier). Override the specific model with
+ * CONCIERGE_MODEL; otherwise the provider's default below is used.
+ */
+export const CONCIERGE_PROVIDER = (process.env.CONCIERGE_PROVIDER || "google").toLowerCase();
+
+const DEFAULT_MODEL: Record<string, string> = {
+  google: "gemini-3.5-flash-lite",
+  anthropic: "claude-sonnet-5",
+};
+
+/** The AI SDK language model for the configured provider. */
+export function conciergeModel(): LanguageModel {
+  const model =
+    process.env.CONCIERGE_MODEL ||
+    DEFAULT_MODEL[CONCIERGE_PROVIDER] ||
+    DEFAULT_MODEL.google;
+  return CONCIERGE_PROVIDER === "anthropic" ? anthropic(model) : google(model);
+}
+
+/** Whether the configured provider has its API key set (drives the /api/chat guard). */
+export function conciergeReady(): { ok: boolean; error?: string } {
+  if (CONCIERGE_PROVIDER === "anthropic") {
+    return process.env.ANTHROPIC_API_KEY
+      ? { ok: true }
+      : { ok: false, error: "The concierge is offline (missing ANTHROPIC_API_KEY)." };
+  }
+  return process.env.GOOGLE_GENERATIVE_AI_API_KEY
+    ? { ok: true }
+    : { ok: false, error: "The concierge is offline (missing GOOGLE_GENERATIVE_AI_API_KEY)." };
+}
+
+/**
+ * The concierge's system prompt (PRD §3b). Takes the current date so the agent can
+ * resolve relative dates like "this Friday". Kept in a lib (not inlined in the route)
+ * so it can be referenced/tested independently.
+ */
+export function conciergeSystemPrompt(now: Date = new Date()): string {
+  const todayISO = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+  const weekday = now.toLocaleDateString("en-US", { weekday: "long" });
+
+  return `You are Sylvia's Concierge, the digital host for ${RESTAURANT.name} — ${RESTAURANT.tagline} (${RESTAURANT.address}; ${RESTAURANT.phone}). ${RESTAURANT.about}
+
+Today is ${weekday}, ${todayISO}. Opening hours: ${HOURS_SUMMARY}. Use today's date to resolve relative dates like "tonight", "this Friday", or "tomorrow" into a concrete YYYY-MM-DD before calling any tool.
+
+HOW TO WORK
+- Answer only from your tools. For any question about food, drinks, specials, events, hours, or location, call the matching tool and answer from what it returns. Never state a dish, price, time, or availability from memory.
+- If a guest asks for something we don't serve (for example, steak), say so plainly, then suggest the closest real options the tools return (e.g. the Sassy Angus Beef Burger, or weekend specials like grilled BBQ short ribs and lamb chops). Never invent a dish, drink, or price.
+
+BOOKING A TABLE
+1. Call check_availability for the requested date, time, and party size.
+2. If the slot is open, restate the details back to the guest (party size, date, time) and collect their name, email, and phone.
+3. Only after the guest explicitly confirms, call book_table. Then give a short confirmation.
+4. If the slot is full or closed, offer the nearest open alternatives that check_availability returns. Never promise a time you didn't confirm with the tool, and never book outside opening hours.
+5. For parties larger than ${MAX_ONLINE_PARTY}, do not book directly — call get_packages and point the guest to our large-party / private-event options.
+
+CONSTRAINTS
+- Your only write action is book_table. You cannot send email, take payment, or cancel anything.
+- For takeout, gift cards, catering, or jobs, hand off with the relevant link from get_info — you don't complete those yourself.
+
+STYLE
+- Keep replies short, warm, and specific. Prices in USD. End a completed booking with one line: party size, date, time, and "confirmed under [name]."
+- If a tool errors or you can't help, say so honestly and share our phone number (${RESTAURANT.phone}) — never guess.`;
+}
