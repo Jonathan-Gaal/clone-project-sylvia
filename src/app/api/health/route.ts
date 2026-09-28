@@ -1,5 +1,5 @@
 import { hasDb, query } from "@/lib/db";
-import { getStripe } from "@/lib/stripe";
+import { getStripe, stripeKeyMode } from "@/lib/stripe";
 import Stripe from "stripe";
 
 type StripeApi = "ok" | "auth_error" | "unreachable" | "skipped";
@@ -11,6 +11,8 @@ type StripeHealth = {
   secretKey: boolean;
   publishableKey: boolean;
   webhookSecret: boolean;
+  // Key mode. This app is test-only; "live" is a red-alert misconfiguration.
+  mode: "test" | "live" | "unknown";
   // Live check: does the secret key still authenticate? Catches an
   // expired/rotated sandbox before the customer-facing form does.
   api: StripeApi;
@@ -49,19 +51,28 @@ export async function GET(): Promise<Response> {
   const secretKey = Boolean(process.env.STRIPE_SECRET_KEY);
   const publishableKey = Boolean(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
   const webhookSecret = Boolean(process.env.STRIPE_WEBHOOK_SECRET);
+  const secretMode = stripeKeyMode(process.env.STRIPE_SECRET_KEY);
+  const isLive =
+    secretMode === "live" ||
+    stripeKeyMode(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY) === "live";
 
-  const { api, detail } = secretKey
-    ? await checkStripeApi()
-    : { api: "skipped" as StripeApi, detail: "STRIPE_SECRET_KEY is not set." };
+  // Never touch Stripe with a live key; report it as the failure it is.
+  const { api, detail } = isLive
+    ? { api: "skipped" as StripeApi, detail: "Live key detected — this app is test-mode only." }
+    : secretKey
+      ? await checkStripeApi()
+      : { api: "skipped" as StripeApi, detail: "STRIPE_SECRET_KEY is not set." };
 
   const stripe: StripeHealth = {
     secretKey,
     publishableKey,
     webhookSecret,
+    mode: secretMode,
     api,
     ...(detail ? { detail } : {}),
   };
-  const stripeOk = secretKey && publishableKey && api !== "auth_error";
+  const stripeOk =
+    secretKey && publishableKey && api !== "auth_error" && !isLive;
 
   // --- Database ---
   if (!hasDb) {
