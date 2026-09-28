@@ -49,6 +49,19 @@ ALTER TABLE reservations
   ADD CONSTRAINT reservations_payment_status_check
   CHECK (payment_status IN ('not_required', 'pending', 'paid', 'failed'));
 
+-- Standalone table reservations (the concierge chatbot). These have no event, a
+-- specific time slot, and a booked/cancelled lifecycle. Event attendance rows keep
+-- event_id set and reservation_time NULL; table bookings are the reverse.
+ALTER TABLE reservations ALTER COLUMN event_id DROP NOT NULL;
+ALTER TABLE reservations ADD COLUMN IF NOT EXISTS reservation_time TIME;
+ALTER TABLE reservations ADD COLUMN IF NOT EXISTS status TEXT NOT NULL DEFAULT 'booked';
+ALTER TABLE reservations DROP CONSTRAINT IF EXISTS reservations_status_check;
+ALTER TABLE reservations
+  ADD CONSTRAINT reservations_status_check CHECK (status IN ('booked', 'cancelled'));
+
 CREATE INDEX IF NOT EXISTS idx_reservations_event ON reservations(event_id);
 CREATE INDEX IF NOT EXISTS idx_reservations_date  ON reservations(reservation_date);
 CREATE INDEX IF NOT EXISTS idx_reservations_session ON reservations(stripe_session_id);
+-- Availability lookups scan a single day's booked tables by time.
+CREATE INDEX IF NOT EXISTS idx_reservations_date_time
+  ON reservations(reservation_date, reservation_time);

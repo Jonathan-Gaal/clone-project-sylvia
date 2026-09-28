@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HEAD_INLINE_CSS } from "@/lib/chrome";
+import ChatWidget from "@/components/ChatWidget";
 import "./globals.css";
 
 const CDN = "https://static.spotapps.co/web/sylviasrestaurant--com";
@@ -44,6 +45,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           under .events-calendar / .events-container / .events-background. */}
       <body className="drink-menu events-container events-background events-calendar">
         {children}
+        {/* Site-wide concierge chatbot (scoped under #sylvias-concierge). */}
+        <ChatWidget />
       </body>
     </html>
   );

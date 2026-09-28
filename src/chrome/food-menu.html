@@ -1,0 +1,1258 @@
+<link rel="stylesheet" href="https://static.spotapps.co/websites/mt/css/general-food-menu-patch.css" />
+<style>
+
+      .webkit-mobile-body>div:first-child{
+          -webkit-overflow-scrolling: touch;
+      }
+
+      .food-menu-page:before {
+                  background-image: url('https://static.spotapps.co/website_images/ab_websites/10649_website_v1/food_back.jpg');
+                          -webkit-filter: opacity(0.2);
+          -moz-filter: opacity(0.2);
+          -o-filter: opacity(0.2);
+          -ms-filter: opacity(0.2);
+          filter: opacity(0.2);
+              }
+
+            	@media (max-width: 1023px) {
+      		.food-menu-grid .food-item-holder {
+      	    text-align: right;
+      	  }
+      	  .food-menu-grid .food-item-title {
+      	    display: block;
+      	    text-align: left;
+      	  }
+      	  .food-menu-grid .food-price {
+      	    float: none;
+      	  }
+      	  .food-menu-grid .food-item-description {
+      	    text-align: left;
+      	  }
+      	}
+      
+    </style>
+<style>a:focus:not(:focus-visible){outline:none;box-shadow:none;}
+a.get-directions-footer-link{display:inline-block;transform-origin:left center;transition:transform .2s ease;}
+a.get-directions-footer-link:hover{transform:scale(1.08);}
+@media (prefers-reduced-motion:reduce){a.get-directions-footer-link{transition:none;transform:none;}}
+a.get-directions-footer-link,a.get-directions-footer-link:hover{color:inherit!important;}</style>
+<style>
+
+  .nav-v7 .navbar-logo .container {
+    height: 70px;
+  }
+  .nav-v7 .navbar-logo .header-logo img {
+    max-height: 70px;
+  }
+
+
+.navbar.nav-v6 .navbar-logo .container {
+  height: 90px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.navbar.nav-v6.nav-scroll .navbar-logo .container {
+  height: 60px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.navbar.nav-v6 .header-logo img {
+  max-width: 100%;
+}
+.navbar.nav-v6.nav-scroll .header-logo img {
+  max-width: 80%;
+}
+.nav-v7 .navbar-logo .header-logo img {
+  max-height: 90px;
+}
+.nav-v7.nav-scroll .navbar-logo .header-logo img {
+  max-height: 60px;
+}
+
+@media (max-width: 767px) {
+  /* DO NOT change mobile nav height on page scroll */
+  .navbar.nav-v6 .navbar-header,
+  .navbar.nav-v6.nav-scroll .navbar-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .navbar.nav-v6 .socialnav,
+  .navbar.nav-v6.nav-scroll .socialnav {
+    margin-top: 10px;
+  }
+  .navbar.nav-v6 .container,
+  .navbar.nav-v6.nav-scroll .container {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .navbar.nav-v6 .header-logo,
+  .navbar.nav-v6.nav-scroll .header-logo {
+    height: 70px;
+  }
+  .navbar.nav-v6 .header-logo img {
+    max-height: 100%;
+  }
+  .navbar.nav-v6.nav-scroll .header-logo img {
+    max-width: 100%;
+  }
+  /* HOME page CHANGE mobile nav height on page scroll */
+  /* Remove body.home-page from below code if there should be mobile nav height change on ALL pages */
+  body.home-page .navbar.nav-v6 .navbar-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  body.home-page .navbar.nav-v6.nav-scroll .navbar-header{
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  body.home-page .navbar.nav-v6 .socialnav {
+    margin-top: 10px;
+  }
+  body.home-page .navbar.nav-v6.nav-scroll .socialnav {
+    margin-top: 0px;
+  }
+  body.home-page .navbar.nav-v6 .container{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  body.home-page .navbar.nav-v6.nav-scroll .container {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  body.home-page .navbar.nav-v6 .header-logo {
+    height: 70px;
+  }
+  body.home-page .navbar.nav-v6.nav-scroll .header-logo {
+    height: 50px;
+  }
+  body.home-page .navbar.nav-v6 .header-logo img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  body.home-page .navbar.nav-v6.nav-scroll .header-logo img {
+    max-width: 80%;
+  }
+}
+
+
+.navbar-regular .navbar-collapse.collapse.in {
+  background-color: transparent;
+  width: 100%;
+}
+.navbar.nav-v6 .navbar-tabs {
+    background-color: transparent;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+}
+.navbar.nav-v6.nav-scroll .navbar-tabs {
+    background-color: #331F52;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+}
+.drink-menu .navbar.nav-v6 .navbar-tabs {
+  background-color: #331F52;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+  -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+}
+.drink-menu .navbar.nav-v6.nav-scroll .navbar-tabs {
+  background-color: #331F52;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+}
+li.drop-down-link .sub-menu {
+  background-color: transparent;
+  color: #fff;
+      background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+  }
+.nav-scroll li.drop-down-link .sub-menu {
+  background-color: #331F52;
+  color: #fff;
+}
+.drink-menu li.drop-down-link .sub-menu {
+  background-color: #331F52;
+  color: #fff;
+}
+.drink-menu .nav-scroll li.drop-down-link .sub-menu {
+  background-color: #331F52;
+  color: #fff;
+}
+li.drop-down-link .sub-menu a,
+li.drop-down-link div.drop-down {
+  color: #fff;
+}
+.nav-scroll li.drop-down-link .sub-menu a,
+.nav-scroll li.drop-down-link div.drop-down {
+  color: #fff;
+}
+.drink-menu li.drop-down-link .sub-menu a,
+.drink-menu li.drop-down-link div.drop-down {
+  color: #fff;
+}
+.drink-menu .nav-scroll li.drop-down-link .sub-menu a,
+.drink-menu .nav-scroll li.drop-down-link div.drop-down {
+  color: #fff;
+}
+
+.navbar.nav-v6 .navbar-logo {
+  background-color: transparent;
+}
+.navbar.nav-v6.nav-scroll .navbar-logo {
+  background-color: #F7F1E5;
+}
+.drink-menu .navbar.nav-v6 .navbar-logo {
+  background-color: transparent;
+}
+.drink-menu .navbar.nav-v6.nav-scroll .navbar-logo {
+  background-color: #F7F1E5;
+}
+
+.navbar-regular.nav-v6 .navbar-nav>li>a,
+.navbar-regular.nav-v6 .navbar-nav>li>a:hover,
+.navbar-regular.nav-v6 .navbar-nav>.active>a,
+.navbar-regular.nav-v6 .navbar-nav>.active>a:focus,
+.navbar-regular.nav-v6 .navbar-nav>.active>a:hover{
+  border: none;
+  border-right: 1px solid #fff;
+  background-color: transparent;
+  color: #F5C552;
+}
+.navbar-regular.nav-v6 .navbar-nav>li>a {
+  color: #fff;
+}
+.drink-menu .navbar.nav-v6 .navbar-nav>li>a {
+  color: #fff;
+  border-right: 1px solid #fff;
+}
+.drink-menu .navbar-regular.nav-v6 .navbar-nav>li>a:hover,
+.drink-menu .navbar-regular.nav-v6 .navbar-nav>.active>a,
+.drink-menu .navbar-regular.nav-v6 .navbar-nav>.active>a:focus,
+.drink-menu .navbar-regular.nav-v6 .navbar-nav>.active>a:hover{
+  color: #F5C552;
+}
+
+li.drop-down-link .sub-menu a:hover,
+li.drop-down-link .sub-menu a:focus{
+  color: #F5C552;
+}
+.drink-menu li.drop-down-link .sub-menu a:hover,
+.drink-menu li.drop-down-link .sub-menu a:focus {
+  color: #F5C552;
+}
+
+.navbar-regular.nav-v7 .navbar-contact .navbar-nav>li>a,
+.navbar-regular.nav-v7 .navbar-contact .navbar-nav>li>a:hover,
+.navbar-regular.nav-v7 .navbar-contact .navbar-nav>.active>a,
+.navbar-regular.nav-v7 .navbar-contact .navbar-nav>.active>a:focus,
+.navbar-regular.nav-v7 .navbar-contact .navbar-nav>.active>a:hover{
+  color: #F5C552;
+}
+.navbar-regular.nav-v7 .navbar-contact .navbar-nav>li>a {
+  color: #fff;
+}
+.drink-menu .navbar.nav-v7 .navbar-nav>li>a {
+  color: #fff;
+}
+.drink-menu .navbar-regular.nav-v7 .navbar-contact .navbar-nav>li>a {
+  color: #fff;
+}
+.drink-menu .navbar-regular.nav-v7 .navbar-contact .navbar-nav>li>a:hover,
+.drink-menu .navbar-regular.nav-v7 .navbar-contact .navbar-nav>.active>a,
+.drink-menu .navbar-regular.nav-v7 .navbar-contact .navbar-nav>.active>a:focus,
+.drink-menu .navbar-regular.nav-v7 .navbar-contact .navbar-nav>.active>a:hover {
+  color: #F5C552;
+}
+
+.navbar-regular.nav-v6 .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.drink-menu .navbar-regular.nav-v6 .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.navbar-regular.nav-v6 [aria-expanded="true"].navbar-toggle .icon-bar {
+  background-color: #F5C552;
+}
+.drink-menu .navbar-regular.nav-v6 [aria-expanded="true"].navbar-toggle .icon-bar {
+  background-color: #F5C552;
+}
+.navbar-regular.nav-v6.nav-scroll .navbar-nav>li>a,
+.navbar-regular.nav-v6.nav-scroll .navbar-nav>li>a:hover,
+.navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a,
+.navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a:focus,
+.navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a:hover{
+  border: none;
+  border-right: 1px solid #fff;
+  color: #F5C552;
+}
+.navbar-regular.nav-v6.nav-scroll .navbar-nav>li>a {
+  color: #fff;
+}
+.drink-menu .navbar.nav-v6.nav-scroll .navbar-nav>li>a {
+  color: #fff;
+  border-right: 1px solid #fff;
+}
+.drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-nav>li>a:hover,
+.drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a,
+.drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a:focus,
+.drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a:hover {
+  color: #F5C552;
+}
+
+.nav-scroll li.drop-down-link .sub-menu a:hover,
+.nav-scroll li.drop-down-link .sub-menu a:focus {
+  color: #F5C552;
+}
+.drink-menu .nav-scroll li.drop-down-link .sub-menu a:hover,
+.drink-menu .nav-scroll li.drop-down-link .sub-menu a:focus {
+  color: #F5C552;
+}
+
+.navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>li>a,
+.navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>li>a:hover,
+.navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>.active>a,
+.navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>.active>a:focus,
+.navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>.active>a:hover {
+  color: #F5C552;
+}
+.navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>li>a {
+  color: #fff;
+}
+.drink-menu .navbar.nav-v6.nav-scroll .navbar-contact .navbar-nav>li>a {
+  color: #fff;
+}
+.drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>li>a:hover,
+.drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>.active>a,
+.drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>.active>a:focus,
+.drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>.active>a:hover{
+  color: #F5C552;
+}
+
+.navbar-regular.nav-v6.nav-scroll .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.navbar-regular.nav-v6.nav-scroll [aria-expanded="true"].navbar-toggle .icon-bar {
+  background-color: #F5C552;
+}
+.drink-menu .navbar-regular.nav-v6.nav-scroll [aria-expanded="true"].navbar-toggle .icon-bar{
+  background-color: #F5C552;
+}
+.navbar.nav-v6 .header-logo-text{
+  color: #fff;
+}
+.navbar.nav-v6.nav-scroll .header-logo-text{
+  color: #fff;
+}
+.navbar.nav-v6 .social-icon{
+  color: #fff;
+}
+.navbar.nav-v6.nav-scroll .social-icon{
+  color: #fff;
+}
+.navbar.nav-v6 .social-square .contact-icon:hover {
+  color: #fff;
+  background-color: #F5C552;
+}
+.navbar.nav-v6.nav-scroll .social-square .contact-icon:hover {
+  color: #fff;
+  background-color: #F5C552;
+}
+
+.drink-menu .navbar.nav-v6 .header-logo-text{
+  color: #fff;
+}
+.drink-menu .navbar.nav-v6.nav-scroll .header-logo-text{
+  color: #fff;
+}
+.drink-menu .navbar.nav-v6 .social-icon{
+  color: #fff;
+}
+.drink-menu  .navbar.nav-v6.nav-scroll .social-icon{
+  color: #fff;
+}
+.drink-menu .navbar.nav-v6 .social-square .contact-icon:hover {
+  color: #fff;
+  background-color: #F5C552;
+}
+.drink-menu .navbar.nav-v6.nav-scroll .social-square .contact-icon:hover {
+  color: #fff;
+  background-color: #F5C552;
+}
+.navbar.nav-v6 .navbar-logo .container {
+  border-bottom: 1px solid transparent;
+}
+.navbar.nav-v6.nav-scroll .navbar-logo .container {
+  border-bottom: 1px solid transparent;
+}
+.drink-menu .navbar.nav-v6 .navbar-logo .container {
+  border-bottom: 1px solid transparent;
+}
+.drink-menu .navbar.nav-v6.nav-scroll .navbar-logo .container {
+  border-bottom: 1px solid transparent;
+}
+@media (max-width: 767px) {
+  .navbar.nav-v6 {
+      background-color: transparent;
+      -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+      -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+      box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+  }
+  .navbar.nav-v6.nav-scroll {
+      background-color: #331F52;
+      -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+      -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+      box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+  }
+  .drink-menu .navbar.nav-v6 {
+    background-color: #331F52;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+  }
+  .drink-menu .navbar.nav-v6.nav-scroll {
+    background-color: #331F52;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+  }
+  .navbar.nav-v6 .container,
+  .navbar.nav-v6.nav-scroll .container,
+  .drink-menu .navbar.nav-v6 .container,
+  .drink-menu .navbar.nav-v6.nav-scroll .container {
+    border-bottom: none;
+  }
+  .navbar.nav-v6 .navbar-header {
+    border-bottom: 2px solid transparent;
+  }
+  .navbar.nav-v6.nav-scroll .navbar-header {
+    border-bottom: 2px solid transparent;
+  }
+  .drink-menu .navbar.nav-v6 .navbar-header {
+    border-bottom: 2px solid transparent;
+  }
+  .drink-menu .navbar.nav-v6.nav-scroll .navbar-header {
+    border-bottom: 2px solid transparent;
+  }
+  li.drop-down-link .sub-menu,
+  .drink-menu li.drop-down-link .sub-menu {
+    background-color: transparent;
+  }
+  .nav-scroll li.drop-down-link .sub-menu,
+  .drink-menu .nav-scroll li.drop-down-link .sub-menu {
+    background-color: transparent;
+  }
+      .navbar-regular.nav-v6 .navbar-nav>li>a {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .navbar-regular.nav-v6.nav-scroll .navbar-nav>li>a {
+      background-color: transparent;
+    }
+
+    li.drop-down-link .sub-menu,
+    .navbar-regular.nav-v6 li.drop-down-link div.drop-down,
+    .drink-menu li.drop-down-link .sub-menu {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .nav-scroll li.drop-down-link .sub-menu,
+    .navbar-regular.nav-v6.nav-scroll li.drop-down-link div.drop-down,
+    .drink-menu .nav-scroll li.drop-down-link .sub-menu {
+      background-color: transparent;
+    }
+    .navbar-regular.nav-v6 .navbar-nav>li>a:hover,
+  .navbar-regular.nav-v6 .navbar-nav>.active>a,
+  .navbar-regular.nav-v6 .navbar-nav>.active>a:focus,
+  .navbar-regular.nav-v6 .navbar-nav>.active>a:hover{
+    background-color: #F5C552;
+    color: #fff;
+  }
+  .navbar-regular.nav-v6.nav-scroll .navbar-nav>li>a:hover,
+  .navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a,
+  .navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a:focus,
+  .navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a:hover{
+    background-color: #F5C552;
+    color: #fff;
+  }
+  .drink-menu .navbar-regular.nav-v6 .navbar-nav>li>a:hover,
+  .drink-menu .navbar-regular.nav-v6 .navbar-nav>.active>a,
+  .drink-menu .navbar-regular.nav-v6 .navbar-nav>.active>a:focus,
+  .drink-menu .navbar-regular.nav-v6 .navbar-nav>.active>a:hover{
+    background-color: #F5C552;
+    color: #fff;
+  }
+  .drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-nav>li>a:hover,
+  .drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a,
+  .drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a:focus,
+  .drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a:hover{
+    background-color: #F5C552;
+    color: #fff;
+  }
+
+  .navbar-regular.nav-v6 li.drop-down-link.active .drop-down .fa.fa-angle-up {
+    color: #fff;
+  }
+  .navbar-regular.nav-v6.nav-scroll li.drop-down-link.active .drop-down .fa.fa-angle-up {
+    color: #fff;
+  }
+  .drink-menu .navbar-regular.nav-v6 li.drop-down-link.active .drop-down .fa.fa-angle-up {
+    color: #fff;
+  }
+  .drink-menu .navbar-regular.nav-v6.nav-scroll li.drop-down-link.active .drop-down .fa.fa-angle-up {
+    color: #fff;
+  }
+}
+</style>
+<style type="text/css">
+    .navbar-fixed-bottom.nav-v1 {
+        bottom: -100px;
+    }
+    .navbar-fixed-bottom.nav-v1 .nav.navbar-nav.navbar-right {
+        background-color: #000;
+    }
+    .navbar-fixed-bottom.nav-v1 .bottom-svg-border path,
+    .navbar-fixed-bottom.nav-v1 .bottom-svg-border polygon {
+      fill: #000;
+    }
+    .navbar-fixed-bottom.nav-v1 .bottom-list-item a {
+        color: #fff;
+    }
+    .navbar-fixed-bottom.nav-v1 .bottom-list-item a:hover,
+    .navbar-fixed-bottom.nav-v1 .bottom-list-item a:focus {
+        color: #A37500;
+    }
+</style>
+<div class="food-menu-page"><header><style>
+
+  .nav-v7 .navbar-logo .container {
+    height: 70px;
+  }
+  .nav-v7 .navbar-logo .header-logo img {
+    max-height: 70px;
+  }
+
+
+.navbar.nav-v6 .navbar-logo .container {
+  height: 90px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.navbar.nav-v6.nav-scroll .navbar-logo .container {
+  height: 60px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.navbar.nav-v6 .header-logo img {
+  max-width: 100%;
+}
+.navbar.nav-v6.nav-scroll .header-logo img {
+  max-width: 80%;
+}
+.nav-v7 .navbar-logo .header-logo img {
+  max-height: 90px;
+}
+.nav-v7.nav-scroll .navbar-logo .header-logo img {
+  max-height: 60px;
+}
+
+@media (max-width: 767px) {
+  /* DO NOT change mobile nav height on page scroll */
+  .navbar.nav-v6 .navbar-header,
+  .navbar.nav-v6.nav-scroll .navbar-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .navbar.nav-v6 .socialnav,
+  .navbar.nav-v6.nav-scroll .socialnav {
+    margin-top: 10px;
+  }
+  .navbar.nav-v6 .container,
+  .navbar.nav-v6.nav-scroll .container {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .navbar.nav-v6 .header-logo,
+  .navbar.nav-v6.nav-scroll .header-logo {
+    height: 70px;
+  }
+  .navbar.nav-v6 .header-logo img {
+    max-height: 100%;
+  }
+  .navbar.nav-v6.nav-scroll .header-logo img {
+    max-width: 100%;
+  }
+  /* HOME page CHANGE mobile nav height on page scroll */
+  /* Remove body.home-page from below code if there should be mobile nav height change on ALL pages */
+  body.home-page .navbar.nav-v6 .navbar-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  body.home-page .navbar.nav-v6.nav-scroll .navbar-header{
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  body.home-page .navbar.nav-v6 .socialnav {
+    margin-top: 10px;
+  }
+  body.home-page .navbar.nav-v6.nav-scroll .socialnav {
+    margin-top: 0px;
+  }
+  body.home-page .navbar.nav-v6 .container{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  body.home-page .navbar.nav-v6.nav-scroll .container {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  body.home-page .navbar.nav-v6 .header-logo {
+    height: 70px;
+  }
+  body.home-page .navbar.nav-v6.nav-scroll .header-logo {
+    height: 50px;
+  }
+  body.home-page .navbar.nav-v6 .header-logo img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+  body.home-page .navbar.nav-v6.nav-scroll .header-logo img {
+    max-width: 80%;
+  }
+}
+
+
+.navbar-regular .navbar-collapse.collapse.in {
+  background-color: transparent;
+  width: 100%;
+}
+.navbar.nav-v6 .navbar-tabs {
+    background-color: transparent;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+}
+.navbar.nav-v6.nav-scroll .navbar-tabs {
+    background-color: #331F52;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+}
+.drink-menu .navbar.nav-v6 .navbar-tabs {
+  background-color: #331F52;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+  -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+}
+.drink-menu .navbar.nav-v6.nav-scroll .navbar-tabs {
+  background-color: #331F52;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+}
+li.drop-down-link .sub-menu {
+  background-color: transparent;
+  color: #fff;
+      background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+  }
+.nav-scroll li.drop-down-link .sub-menu {
+  background-color: #331F52;
+  color: #fff;
+}
+.drink-menu li.drop-down-link .sub-menu {
+  background-color: #331F52;
+  color: #fff;
+}
+.drink-menu .nav-scroll li.drop-down-link .sub-menu {
+  background-color: #331F52;
+  color: #fff;
+}
+li.drop-down-link .sub-menu a,
+li.drop-down-link div.drop-down {
+  color: #fff;
+}
+.nav-scroll li.drop-down-link .sub-menu a,
+.nav-scroll li.drop-down-link div.drop-down {
+  color: #fff;
+}
+.drink-menu li.drop-down-link .sub-menu a,
+.drink-menu li.drop-down-link div.drop-down {
+  color: #fff;
+}
+.drink-menu .nav-scroll li.drop-down-link .sub-menu a,
+.drink-menu .nav-scroll li.drop-down-link div.drop-down {
+  color: #fff;
+}
+
+.navbar.nav-v6 .navbar-logo {
+  background-color: transparent;
+}
+.navbar.nav-v6.nav-scroll .navbar-logo {
+  background-color: #F7F1E5;
+}
+.drink-menu .navbar.nav-v6 .navbar-logo {
+  background-color: transparent;
+}
+.drink-menu .navbar.nav-v6.nav-scroll .navbar-logo {
+  background-color: #F7F1E5;
+}
+
+.navbar-regular.nav-v6 .navbar-nav>li>a,
+.navbar-regular.nav-v6 .navbar-nav>li>a:hover,
+.navbar-regular.nav-v6 .navbar-nav>.active>a,
+.navbar-regular.nav-v6 .navbar-nav>.active>a:focus,
+.navbar-regular.nav-v6 .navbar-nav>.active>a:hover{
+  border: none;
+  border-right: 1px solid #fff;
+  background-color: transparent;
+  color: #F5C552;
+}
+.navbar-regular.nav-v6 .navbar-nav>li>a {
+  color: #fff;
+}
+.drink-menu .navbar.nav-v6 .navbar-nav>li>a {
+  color: #fff;
+  border-right: 1px solid #fff;
+}
+.drink-menu .navbar-regular.nav-v6 .navbar-nav>li>a:hover,
+.drink-menu .navbar-regular.nav-v6 .navbar-nav>.active>a,
+.drink-menu .navbar-regular.nav-v6 .navbar-nav>.active>a:focus,
+.drink-menu .navbar-regular.nav-v6 .navbar-nav>.active>a:hover{
+  color: #F5C552;
+}
+
+li.drop-down-link .sub-menu a:hover,
+li.drop-down-link .sub-menu a:focus{
+  color: #F5C552;
+}
+.drink-menu li.drop-down-link .sub-menu a:hover,
+.drink-menu li.drop-down-link .sub-menu a:focus {
+  color: #F5C552;
+}
+
+.navbar-regular.nav-v7 .navbar-contact .navbar-nav>li>a,
+.navbar-regular.nav-v7 .navbar-contact .navbar-nav>li>a:hover,
+.navbar-regular.nav-v7 .navbar-contact .navbar-nav>.active>a,
+.navbar-regular.nav-v7 .navbar-contact .navbar-nav>.active>a:focus,
+.navbar-regular.nav-v7 .navbar-contact .navbar-nav>.active>a:hover{
+  color: #F5C552;
+}
+.navbar-regular.nav-v7 .navbar-contact .navbar-nav>li>a {
+  color: #fff;
+}
+.drink-menu .navbar.nav-v7 .navbar-nav>li>a {
+  color: #fff;
+}
+.drink-menu .navbar-regular.nav-v7 .navbar-contact .navbar-nav>li>a {
+  color: #fff;
+}
+.drink-menu .navbar-regular.nav-v7 .navbar-contact .navbar-nav>li>a:hover,
+.drink-menu .navbar-regular.nav-v7 .navbar-contact .navbar-nav>.active>a,
+.drink-menu .navbar-regular.nav-v7 .navbar-contact .navbar-nav>.active>a:focus,
+.drink-menu .navbar-regular.nav-v7 .navbar-contact .navbar-nav>.active>a:hover {
+  color: #F5C552;
+}
+
+.navbar-regular.nav-v6 .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.drink-menu .navbar-regular.nav-v6 .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.navbar-regular.nav-v6 [aria-expanded="true"].navbar-toggle .icon-bar {
+  background-color: #F5C552;
+}
+.drink-menu .navbar-regular.nav-v6 [aria-expanded="true"].navbar-toggle .icon-bar {
+  background-color: #F5C552;
+}
+.navbar-regular.nav-v6.nav-scroll .navbar-nav>li>a,
+.navbar-regular.nav-v6.nav-scroll .navbar-nav>li>a:hover,
+.navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a,
+.navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a:focus,
+.navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a:hover{
+  border: none;
+  border-right: 1px solid #fff;
+  color: #F5C552;
+}
+.navbar-regular.nav-v6.nav-scroll .navbar-nav>li>a {
+  color: #fff;
+}
+.drink-menu .navbar.nav-v6.nav-scroll .navbar-nav>li>a {
+  color: #fff;
+  border-right: 1px solid #fff;
+}
+.drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-nav>li>a:hover,
+.drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a,
+.drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a:focus,
+.drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a:hover {
+  color: #F5C552;
+}
+
+.nav-scroll li.drop-down-link .sub-menu a:hover,
+.nav-scroll li.drop-down-link .sub-menu a:focus {
+  color: #F5C552;
+}
+.drink-menu .nav-scroll li.drop-down-link .sub-menu a:hover,
+.drink-menu .nav-scroll li.drop-down-link .sub-menu a:focus {
+  color: #F5C552;
+}
+
+.navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>li>a,
+.navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>li>a:hover,
+.navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>.active>a,
+.navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>.active>a:focus,
+.navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>.active>a:hover {
+  color: #F5C552;
+}
+.navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>li>a {
+  color: #fff;
+}
+.drink-menu .navbar.nav-v6.nav-scroll .navbar-contact .navbar-nav>li>a {
+  color: #fff;
+}
+.drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>li>a:hover,
+.drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>.active>a,
+.drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>.active>a:focus,
+.drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-contact .navbar-nav>.active>a:hover{
+  color: #F5C552;
+}
+
+.navbar-regular.nav-v6.nav-scroll .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.navbar-regular.nav-v6.nav-scroll [aria-expanded="true"].navbar-toggle .icon-bar {
+  background-color: #F5C552;
+}
+.drink-menu .navbar-regular.nav-v6.nav-scroll [aria-expanded="true"].navbar-toggle .icon-bar{
+  background-color: #F5C552;
+}
+.navbar.nav-v6 .header-logo-text{
+  color: #fff;
+}
+.navbar.nav-v6.nav-scroll .header-logo-text{
+  color: #fff;
+}
+.navbar.nav-v6 .social-icon{
+  color: #fff;
+}
+.navbar.nav-v6.nav-scroll .social-icon{
+  color: #fff;
+}
+.navbar.nav-v6 .social-square .contact-icon:hover {
+  color: #fff;
+  background-color: #F5C552;
+}
+.navbar.nav-v6.nav-scroll .social-square .contact-icon:hover {
+  color: #fff;
+  background-color: #F5C552;
+}
+
+.drink-menu .navbar.nav-v6 .header-logo-text{
+  color: #fff;
+}
+.drink-menu .navbar.nav-v6.nav-scroll .header-logo-text{
+  color: #fff;
+}
+.drink-menu .navbar.nav-v6 .social-icon{
+  color: #fff;
+}
+.drink-menu  .navbar.nav-v6.nav-scroll .social-icon{
+  color: #fff;
+}
+.drink-menu .navbar.nav-v6 .social-square .contact-icon:hover {
+  color: #fff;
+  background-color: #F5C552;
+}
+.drink-menu .navbar.nav-v6.nav-scroll .social-square .contact-icon:hover {
+  color: #fff;
+  background-color: #F5C552;
+}
+.navbar.nav-v6 .navbar-logo .container {
+  border-bottom: 1px solid transparent;
+}
+.navbar.nav-v6.nav-scroll .navbar-logo .container {
+  border-bottom: 1px solid transparent;
+}
+.drink-menu .navbar.nav-v6 .navbar-logo .container {
+  border-bottom: 1px solid transparent;
+}
+.drink-menu .navbar.nav-v6.nav-scroll .navbar-logo .container {
+  border-bottom: 1px solid transparent;
+}
+@media (max-width: 767px) {
+  .navbar.nav-v6 {
+      background-color: transparent;
+      -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+      -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+      box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+  }
+  .navbar.nav-v6.nav-scroll {
+      background-color: #331F52;
+      -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+      -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+      box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+  }
+  .drink-menu .navbar.nav-v6 {
+    background-color: #331F52;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0);
+  }
+  .drink-menu .navbar.nav-v6.nav-scroll {
+    background-color: #331F52;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+  }
+  .navbar.nav-v6 .container,
+  .navbar.nav-v6.nav-scroll .container,
+  .drink-menu .navbar.nav-v6 .container,
+  .drink-menu .navbar.nav-v6.nav-scroll .container {
+    border-bottom: none;
+  }
+  .navbar.nav-v6 .navbar-header {
+    border-bottom: 2px solid transparent;
+  }
+  .navbar.nav-v6.nav-scroll .navbar-header {
+    border-bottom: 2px solid transparent;
+  }
+  .drink-menu .navbar.nav-v6 .navbar-header {
+    border-bottom: 2px solid transparent;
+  }
+  .drink-menu .navbar.nav-v6.nav-scroll .navbar-header {
+    border-bottom: 2px solid transparent;
+  }
+  li.drop-down-link .sub-menu,
+  .drink-menu li.drop-down-link .sub-menu {
+    background-color: transparent;
+  }
+  .nav-scroll li.drop-down-link .sub-menu,
+  .drink-menu .nav-scroll li.drop-down-link .sub-menu {
+    background-color: transparent;
+  }
+      .navbar-regular.nav-v6 .navbar-nav>li>a {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .navbar-regular.nav-v6.nav-scroll .navbar-nav>li>a {
+      background-color: transparent;
+    }
+
+    li.drop-down-link .sub-menu,
+    .navbar-regular.nav-v6 li.drop-down-link div.drop-down,
+    .drink-menu li.drop-down-link .sub-menu {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .nav-scroll li.drop-down-link .sub-menu,
+    .navbar-regular.nav-v6.nav-scroll li.drop-down-link div.drop-down,
+    .drink-menu .nav-scroll li.drop-down-link .sub-menu {
+      background-color: transparent;
+    }
+    .navbar-regular.nav-v6 .navbar-nav>li>a:hover,
+  .navbar-regular.nav-v6 .navbar-nav>.active>a,
+  .navbar-regular.nav-v6 .navbar-nav>.active>a:focus,
+  .navbar-regular.nav-v6 .navbar-nav>.active>a:hover{
+    background-color: #F5C552;
+    color: #fff;
+  }
+  .navbar-regular.nav-v6.nav-scroll .navbar-nav>li>a:hover,
+  .navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a,
+  .navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a:focus,
+  .navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a:hover{
+    background-color: #F5C552;
+    color: #fff;
+  }
+  .drink-menu .navbar-regular.nav-v6 .navbar-nav>li>a:hover,
+  .drink-menu .navbar-regular.nav-v6 .navbar-nav>.active>a,
+  .drink-menu .navbar-regular.nav-v6 .navbar-nav>.active>a:focus,
+  .drink-menu .navbar-regular.nav-v6 .navbar-nav>.active>a:hover{
+    background-color: #F5C552;
+    color: #fff;
+  }
+  .drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-nav>li>a:hover,
+  .drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a,
+  .drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a:focus,
+  .drink-menu .navbar-regular.nav-v6.nav-scroll .navbar-nav>.active>a:hover{
+    background-color: #F5C552;
+    color: #fff;
+  }
+
+  .navbar-regular.nav-v6 li.drop-down-link.active .drop-down .fa.fa-angle-up {
+    color: #fff;
+  }
+  .navbar-regular.nav-v6.nav-scroll li.drop-down-link.active .drop-down .fa.fa-angle-up {
+    color: #fff;
+  }
+  .drink-menu .navbar-regular.nav-v6 li.drop-down-link.active .drop-down .fa.fa-angle-up {
+    color: #fff;
+  }
+  .drink-menu .navbar-regular.nav-v6.nav-scroll li.drop-down-link.active .drop-down .fa.fa-angle-up {
+    color: #fff;
+  }
+}
+</style><!-- nav --><nav class="navbar nav-v4 nav-v6 nav-v7 navbar-regular navbar-fixed-top" id="navbar" role="navigation"><div id="skip"><a class="visuallyhidden skip-content" href="#content">Skip to main content</a></div><div class="desktop-navigation logo-center"><div class="navbar-logo"><div class="container"><a class="header-logo logo-top" href="/#"><img alt="Sylvia’s Restaurant logo top - Homepage" aria-label="Homepage" class="img-responsive logo-top" src="https://static.spotapps.co/website_images/ab_websites/10649_website_v1/logo.png"/></a><a class="header-logo logo-scroll" href="/"><img alt="Sylvia’s Restaurant logo scroll - Homepage" aria-label="Homepage" class="img-responsive logo-scroll" src="https://static.spotapps.co/website_images/ab_websites/10649_website_v1/logo.png"/></a><div class="navbar-contact"><ul class="nav navbar-nav navbar-right"><li class="nav-phone"><a href="tel:+12129960660"><i aria-hidden="true" class="fa fa-phone"></i><span>(212)-996-0660</span></a></li><li class="nav-email"><a href="mailto:info@sylviasrestaurant.com"><i aria-hidden="true" class="fa fa-envelope-o"></i><span>info@sylviasrestaurant.com</span></a></li></ul></div></div></div><div class="navbar-tabs"><div class="container"><div class="navbar-content"><ul class="nav navbar-nav"><li class=" drop-down-link menu-drop-down"><a aria-expanded="false" class="drop-down" href="#" id="nav_tab_1_link1" role="button" target="">
+                              
+                              Menu
+                                                              <i aria-hidden="true" class="fa fa-angle-down"></i><i aria-hidden="true" class="fa fa-angle-up"></i></a><ul class="sub-menu"><li><a class="sub-menu-link" href="/menu" id="nav_tab_1_link1_option1" target="_self">
+                                 Food                                 </a></li><li><a class="sub-menu-link" href="/drink-menu" id="nav_tab_1_link1_option2" target="_self">
+                                 Drinks                                 </a></li><li><a class="sub-menu-link" href="/specials" id="nav_tab_1_link1_option3" target="_self">
+                                 Daily Specials                                 </a></li></ul></li><li class=" nav-order-link"><a class="link-order-sh" href="https://direct.chownow.com/order/22566/locations/32842#" id="nav_tab_2_link" target="_blank">
+                              
+                              Order
+                              
+                        </a></li><li class=" additional-tab outside-link"><a class="additional-link-1" href="/cater" id="nav_tab_3_link" target="_self">
+                              
+                              Catering/Parties
+                              
+                        </a></li><li class=" "><a class="" href="/events" id="nav_tab_4_link" target="_self">
+                              
+                              Events
+                              
+                        </a></li><li class=" "><a class="" href="/news" id="nav_tab_5_link" target="_self">
+                              
+                              News
+                              
+                        </a></li><li class=" gift-cards-nav"><a class="gift-cards-link" href="https://www.toasttab.com/sylvias-restaurant/giftcards" id="nav_tab_6_link" target="_blank">
+                              
+                              Gift Cards
+                              
+                        </a></li><li class=" "><a class="" href="https://www.toasttab.com/sylvias-restaurant/rewardsSignup#" id="nav_tab_7_link" target="_blank">
+                              
+                              Loyalty
+                              
+                        </a></li><li class=" drop-down-link"><a aria-expanded="false" class="drop-down" href="#" id="nav_tab_8_link2" role="button" target="">
+                              
+                              Shop
+                                                              <i aria-hidden="true" class="fa fa-angle-down"></i><i aria-hidden="true" class="fa fa-angle-up"></i></a><ul class="sub-menu"><li><a class="sub-menu-link" href="https://www.amazon.com/stores/Sylvia-Woods/author/B001IO9L70?ref=ap_rdr&isDramIntegrated=true&shoppingPortalEnabled=true" id="nav_tab_8_link2_option1" target="_blank">
+                                 Cookbook                                 </a></li><li><a class="sub-menu-link" href="https://sylviassoulfoodbrand.com/" id="nav_tab_8_link2_option2" target="_blank">
+                                 Products                                 </a></li></ul></li><li class=" nav-jobs-link"><a class="link-jobs-sh" href="https://sylviasrestaurant.isolvedhire.com/jobs/#" id="nav_tab_9_link" target="_blank">
+                              
+                              Jobs
+                              
+                        </a></li><li class=" "><a class="" href="/scholarships" id="nav_tab_10_link" target="_self">
+                              
+                              Scholarships
+                              
+                        </a></li><li class=" "><a class="" href="/contact-us" id="nav_tab_11_link" target="_self">
+                              
+                              Contact Us
+                              
+                        </a></li><li class=" "><a class="editor-empty-element" href="/parties" id="nav_tab_12_link" target="_self">
+                              
+                              *
+                              
+                        </a></li><li class=" nav-reservations-link"><a class="link-reservations-sh" href="https://resy.com/cities/new-york-ny/venues/sylvias-restaurant?date=2026-08-11&seats=2#" id="nav_tab_13_link" target="_blank">
+                              
+                              Reserve
+                              
+                        </a></li></ul><ul class="socialnav"><li class="social-links social-icons-holder social-square"><a class="pull-left contact-icon" href="https://www.twitter.com/SylviasSoulFood" target="_blank"><i class="social-icon fa icon-twitter-x"></i><span>Twitter / X page</span></a></li><li class="social-links social-icons-holder social-square"><a class="pull-left contact-icon" href="https://www.facebook.com/48011858940" target="_blank"><i class="social-icon fa fa-facebook"></i><span>Facebook page</span></a></li><li class="social-links social-icons-holder social-square"><a class="pull-left contact-icon" href="https://www.instagram.com/sylviasrestaurant" target="_blank"><i class="social-icon fa fa-instagram"></i><span>Instagram page</span></a></li><li class="social-links social-icons-holder social-square"><a class="pull-left contact-icon" href="https://www.google.com/search?q=Sylvia%E2%80%99s+Restaurant+328+Malcolm+X+Blvd&oq=Sylvia%E2%80%99s+Restaurant+328+Malcolm+X+Blvd&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yCAgCEAAYFhgeMgoIAxAAGAoYFhgeMgoIBBAAGIAEGKIEMgoIBRAAGIAEGKIEMgoIBhAAGIAEGKIEMgoIBxAAGKIEGIkFMgoICBAAGIAEGKIE0gEIMTU1MmowajeoAgCwAgA&sourceid=chrome&ie=UTF-8#lrd=0x89c2f60cd3f0c56f:0x42be8b74f8751a5e,1,,,," target="_blank"><i aria-hidden="true" class="social-icon fa fa-google"></i><span>Google page</span></a></li></ul></div></div></div></div><div class="mobile-navigation"><div class="container"><a class="header-logo logo-top" href="/#"><img alt="Sylvia’s Restaurant logo top - Homepage" aria-label="Homepage" class="img-responsive logo-top" src="https://static.spotapps.co/website_images/ab_websites/10649_website_v1/logo.png"/></a><a class="header-logo logo-scroll" href="/"><img alt="Sylvia’s Restaurant logo scroll - Homepage" aria-label="Homepage" class="img-responsive logo-scroll" src="https://static.spotapps.co/website_images/ab_websites/10649_website_v1/logo.png"/></a><ul class="socialnav"><li class="social-links social-icons-holder social-square"><a class="pull-left contact-icon" href="https://www.twitter.com/SylviasSoulFood" target="_blank"><i class="social-icon fa icon-twitter-x"></i><span>Twitter / X page</span></a></li><li class="social-links social-icons-holder social-square"><a class="pull-left contact-icon" href="https://www.facebook.com/48011858940" target="_blank"><i class="social-icon fa fa-facebook"></i><span>Facebook page</span></a></li><li class="social-links social-icons-holder social-square"><a class="pull-left contact-icon" href="https://www.instagram.com/sylviasrestaurant" target="_blank"><i class="social-icon fa fa-instagram"></i><span>Instagram page</span></a></li><li class="social-links social-icons-holder social-square"><a class="pull-left contact-icon" href="https://www.google.com/search?q=Sylvia%E2%80%99s+Restaurant+328+Malcolm+X+Blvd&oq=Sylvia%E2%80%99s+Restaurant+328+Malcolm+X+Blvd&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yCAgCEAAYFhgeMgoIAxAAGAoYFhgeMgoIBBAAGIAEGKIEMgoIBRAAGIAEGKIEMgoIBhAAGIAEGKIEMgoIBxAAGKIEGIkFMgoICBAAGIAEGKIE0gEIMTU1MmowajeoAgCwAgA&sourceid=chrome&ie=UTF-8#lrd=0x89c2f60cd3f0c56f:0x42be8b74f8751a5e,1,,,," target="_blank"><i aria-hidden="true" class="social-icon fa fa-google"></i><span>Google page</span></a></li></ul><div class="navbar-header"><button class="navbar-toggle" data-target="#navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div><div class="collapse navbar-collapse" id="navbar-collapse-1"><ul class="nav navbar-nav navbar-right"><li class=" drop-down-link menu-drop-down"><a aria-expanded="false" class="drop-down" href="#" id="mobile_nav_tab_1_link1" role="button" target="">
+                    Menu
+                                          <i aria-hidden="true" class="fa fa-angle-down"></i><i aria-hidden="true" class="fa fa-angle-up"></i></a><ul class="sub-menu"><li><a class="sub-menu-link" href="/menu" id="mobile_nav_tab_1_link1_option1" target="_self">
+                        Food                        </a></li><li><a class="sub-menu-link" href="/drink-menu" id="mobile_nav_tab_1_link1_option2" target="_self">
+                        Drinks                        </a></li><li><a class="sub-menu-link" href="/specials" id="mobile_nav_tab_1_link1_option3" target="_self">
+                        Daily Specials                        </a></li></ul></li><li class=" nav-order-link"><a class="link-order-sh" href="https://direct.chownow.com/order/22566/locations/32842#" id="mobile_nav_tab_2_link" target="_blank">
+                    Order
+                                      </a></li><li class=" additional-tab outside-link"><a class="additional-link-1" href="/cater" id="mobile_nav_tab_3_link" target="_self">
+                    Catering/Parties
+                                      </a></li><li class=" "><a class="" href="/events" id="mobile_nav_tab_4_link" target="_self">
+                    Events
+                                      </a></li><li class=" "><a class="" href="/news" id="mobile_nav_tab_5_link" target="_self">
+                    News
+                                      </a></li><li class=" gift-cards-nav"><a class="gift-cards-link" href="https://www.toasttab.com/sylvias-restaurant/giftcards" id="mobile_nav_tab_6_link" target="_blank">
+                    Gift Cards
+                                      </a></li><li class=" "><a class="" href="https://www.toasttab.com/sylvias-restaurant/rewardsSignup#" id="mobile_nav_tab_7_link" target="_blank">
+                    Loyalty
+                                      </a></li><li class=" drop-down-link"><a aria-expanded="false" class="drop-down" href="#" id="mobile_nav_tab_8_link2" role="button" target="">
+                    Shop
+                                          <i aria-hidden="true" class="fa fa-angle-down"></i><i aria-hidden="true" class="fa fa-angle-up"></i></a><ul class="sub-menu"><li><a class="sub-menu-link" href="https://www.amazon.com/stores/Sylvia-Woods/author/B001IO9L70?ref=ap_rdr&isDramIntegrated=true&shoppingPortalEnabled=true" id="mobile_nav_tab_8_link2_option1" target="_blank">
+                        Cookbook                        </a></li><li><a class="sub-menu-link" href="https://sylviassoulfoodbrand.com/" id="mobile_nav_tab_8_link2_option2" target="_blank">
+                        Products                        </a></li></ul></li><li class=" nav-jobs-link"><a class="link-jobs-sh" href="https://sylviasrestaurant.isolvedhire.com/jobs/#" id="mobile_nav_tab_9_link" target="_blank">
+                    Jobs
+                                      </a></li><li class=" "><a class="" href="/scholarships" id="mobile_nav_tab_10_link" target="_self">
+                    Scholarships
+                                      </a></li><li class=" "><a class="" href="/contact-us" id="mobile_nav_tab_11_link" target="_self">
+                    Contact Us
+                                      </a></li><li class=" "><a class="editor-empty-element" href="/parties" id="mobile_nav_tab_12_link" target="_self">
+                    *
+                                      </a></li><li class=" nav-reservations-link"><a class="link-reservations-sh" href="https://resy.com/cities/new-york-ny/venues/sylvias-restaurant?date=2026-08-11&seats=2#" id="mobile_nav_tab_13_link" target="_blank">
+                    Reserve
+                                      </a></li></ul></div></div></div></nav></header><main id="content" role="main"><article><div class="food-menu-v2-wrapper section-wrapper menu-item-photos" id="food_menu_v2"><h1 class="section-header">Our Menu</h1><ul class="food-menu-nav"><li class="food-menu-nav-li"><a class="food-menu-nav-item menu_1084805_link custom-temp-btn hvr-fade" href="https://sylviasrestaurant.com/food-menu?menu_id=1084805" id="1084805"><span>Menu</span></a></li><li class="food-menu-nav-li"><a class="food-menu-nav-item menu_1084806_link custom-temp-btn hvr-fade" href="https://sylviasrestaurant.com/food-menu?menu_id=1084806" id="1084806"><span>Lunch Specials</span></a></li><li class="food-menu-nav-li"><a class="food-menu-nav-item menu_1084807_link custom-temp-btn hvr-fade" href="https://sylviasrestaurant.com/food-menu?menu_id=1084807" id="1084807"><span>Daily Specials</span></a></li><li class="food-menu-nav-li"><a class="food-menu-nav-item menu_1086644_link custom-temp-btn hvr-fade" href="https://sylviasrestaurant.com/food-menu?menu_id=1086644" id="1086644"><span>Large Party Menu</span></a></li><li class="food-menu-nav-li"><a class="food-menu-nav-item menu_1086619_link custom-temp-btn hvr-fade" href="https://sylviasrestaurant.com/food-menu?menu_id=1086619" id="1086619"><span>On - Premise Event Menu</span></a></li><li class="food-menu-nav-li"><a class="food-menu-nav-item menu_1086668_link custom-temp-btn hvr-fade" href="https://sylviasrestaurant.com/food-menu?menu_id=1086668" id="1086668"><span>Catering Menu</span></a></li><li class="food-menu-nav-li"><a class="food-menu-nav-item menu_1576025_link custom-temp-btn hvr-fade" href="https://sylviasrestaurant.com/food-menu?menu_id=1576025" id="1576025"><span>NY Restaurant Week Lunch Menu</span></a></li><li class="food-menu-nav-li"><a class="food-menu-nav-item menu_1576048_link custom-temp-btn hvr-fade" href="https://sylviasrestaurant.com/food-menu?menu_id=1576048" id="1576048"><span>NY Restaurant Week Dinner Menu</span></a></li></ul><div class="container"><div class="food-menu-holder"><div class="menu_1084805 food-menu-grid" style="display:none"><div class="food-menu-grid-sizer"></div><div class="food-menu-grid-item food-menu-grid-item--width2"><div class="menu-description"><p>GF - Gluten-free | V - Vegetarian<br/><br/>
+*Consuming raw or under-cooked meats, poultry, seafood, shellfish, or eggs may increase the risk of foodborne illness.<br/>
+*Prices are subject to change.</p></div></div><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Appetizers</h2><div class="food-menu-content"><div class="food-item-holder" id="menu_item_5906859"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/4d/f4c90dbb1542e79d67470f2a730d94/full" srcset="//static.spotapps.co/spots/4d/f4c90dbb1542e79d67470f2a730d94/small 200w, //static.spotapps.co/spots/4d/f4c90dbb1542e79d67470f2a730d94/medium 400w, //static.spotapps.co/spots/4d/f4c90dbb1542e79d67470f2a730d94/full 800w" id="item_image_5906859" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Fried Chicken Wings</h3></div><div class="food-price">$16</div><div class="food-item-description">Mix of flats and drums.</div></div><div class="food-item-holder" id="menu_item_4910523"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/ed/278da7be0f4968bfb95e1c10ded8c3/full" srcset="//static.spotapps.co/spots/ed/278da7be0f4968bfb95e1c10ded8c3/small 200w, //static.spotapps.co/spots/ed/278da7be0f4968bfb95e1c10ded8c3/medium 400w, //static.spotapps.co/spots/ed/278da7be0f4968bfb95e1c10ded8c3/full 800w" id="item_image_4910523" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Catfish Fingers</h3></div><div class="food-price">$19</div><div class="food-item-description">w/House-Made Tartar Sauce</div></div><div class="food-item-holder" id="menu_item_6569652"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Spicy Fish Fritters</h3></div><div class="food-price">$16</div><div class="food-item-description">w/House-Made Tartar Sauce</div></div><div class="food-item-holder" id="menu_item_4910537"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/d9/d73aeabdbc48889fd312a0e7f5ca85/full" srcset="//static.spotapps.co/spots/d9/d73aeabdbc48889fd312a0e7f5ca85/small 200w, //static.spotapps.co/spots/d9/d73aeabdbc48889fd312a0e7f5ca85/medium 400w, //static.spotapps.co/spots/d9/d73aeabdbc48889fd312a0e7f5ca85/full 800w" id="item_image_4910537" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Chicken Livers</h3></div><div class="food-price">$13</div><div class="food-item-description">Sauteed with onions &amp; peppers with Sylvia’s brown gravy.</div></div></div></div></section></div><!-- end of food menu grod item --><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Chicken Selections</h2><div class="food-menu-description"><p>All entrée selections are served with two side orders and homemade cornbread. <br/>
+Note: Premium Sides of Traditional or Vegetarian Collard Greens and Baked Macaroni &amp; Cheese are a $2 upcharge</p></div><div class="food-menu-content"><div class="food-item-holder" id="menu_item_4911374"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/11/839a54f6324b5d9e7fe4c46592ad11/full" srcset="//static.spotapps.co/spots/11/839a54f6324b5d9e7fe4c46592ad11/small 200w, //static.spotapps.co/spots/11/839a54f6324b5d9e7fe4c46592ad11/medium 400w, //static.spotapps.co/spots/11/839a54f6324b5d9e7fe4c46592ad11/full 800w" id="item_image_4911374" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Sylvia’s Down Home Fried Chicken</h3></div><div class="food-price">$25</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4911383"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Sylvia’s Smothered Chicken</h3></div><div class="food-price">$25</div><div class="food-item-description">Lightly fried chicken slow-cooked in Sylvia’s brown gravy.</div></div><div class="food-item-holder" id="menu_item_4928258"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/44/71582d9128443f86ec3c3dedc3646d/full" srcset="//static.spotapps.co/spots/44/71582d9128443f86ec3c3dedc3646d/small 200w, //static.spotapps.co/spots/44/71582d9128443f86ec3c3dedc3646d/medium 400w, //static.spotapps.co/spots/44/71582d9128443f86ec3c3dedc3646d/full 800w" id="item_image_4928258" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Oven Baked Half Chicken</h3></div><div class="food-price">$26</div><div class="food-item-description">Seasoned to perfection with fresh herb.</div></div></div></div></section></div><!-- end of food menu grod item --><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Pork Selections</h2><div class="food-menu-description"><p>All entrée selections are served with two side orders and homemade cornbread. <br/>
+Note: Premium Sides of Traditional or Vegetarian Collard Greens and Baked Macaroni &amp; Cheese are a $2 upcharge</p></div><div class="food-menu-content"><div class="food-item-holder" id="menu_item_4911453"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/be/b2a5498def484c9ea533085546004a/full" srcset="//static.spotapps.co/spots/be/b2a5498def484c9ea533085546004a/small 200w, //static.spotapps.co/spots/be/b2a5498def484c9ea533085546004a/medium 400w, //static.spotapps.co/spots/be/b2a5498def484c9ea533085546004a/full 800w" id="item_image_4911453" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Bar-B-Que Ribs</h3></div><div class="food-price">$29</div><div class="food-item-description">Sylvia&apos;s World Famous Talked about BAR-B-QUE pork ribs  with Sylvia’s original sassy sauce.</div></div><div class="food-item-holder" id="menu_item_4911660"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/f2/334de4b0274b72bf5c5aead6dacf05/full" srcset="//static.spotapps.co/spots/f2/334de4b0274b72bf5c5aead6dacf05/small 200w, //static.spotapps.co/spots/f2/334de4b0274b72bf5c5aead6dacf05/medium 400w, //static.spotapps.co/spots/f2/334de4b0274b72bf5c5aead6dacf05/full 800w" id="item_image_4911660" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Pork Chops</h3></div><div class="food-price"></div><div class="food-item-description">One Pork Chop $25.00 | Two Pork Chops $32.00 <br/> Golden Fried, (GF) Grilled or Smothered</div></div></div></div></section></div><!-- end of food menu grod item --><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Seafood Selections</h2><div class="food-menu-description"><p>All entrée selections are served with two side orders and homemade cornbread. <br/>
+Note: Premium Sides of Traditional or Vegetarian Collard Greens and Baked Macaroni &amp; Cheese are a $2 upcharge</p></div><div class="food-menu-content"><div class="food-item-holder" id="menu_item_4911691"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/9f/94bab133e94bbd8a3df181e5a599d5/full" srcset="//static.spotapps.co/spots/9f/94bab133e94bbd8a3df181e5a599d5/small 200w, //static.spotapps.co/spots/9f/94bab133e94bbd8a3df181e5a599d5/medium 400w, //static.spotapps.co/spots/9f/94bab133e94bbd8a3df181e5a599d5/full 800w" id="item_image_4911691" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Tasty Carolina Style Fried or Grilled Catfish</h3></div><div class="food-price">$30</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4928320"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Grandma Julia’s Cornmeal Fried Whiting</h3></div><div class="food-price">$25</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4911699"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/72/b6654141bc42fea3041caff421545f/full" srcset="//static.spotapps.co/spots/72/b6654141bc42fea3041caff421545f/small 200w, //static.spotapps.co/spots/72/b6654141bc42fea3041caff421545f/medium 400w, //static.spotapps.co/spots/72/b6654141bc42fea3041caff421545f/full 800w" id="item_image_4911699" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Grilled Atlantic Bar-B-Que Salmon</h3></div><div class="food-price">$32</div><div class="food-item-description"></div></div></div></div></section></div><!-- end of food menu grod item --><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Salads &amp; More</h2><div class="food-menu-content"><div class="food-item-holder" id="menu_item_4917237"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Soulful Caesar Salad - Kale and Mixed Greens (V)</h3></div><div class="food-price">$15</div><div class="food-item-description">Add: Grilled Chicken +$10 <br/> Grilled Salmon +$16</div></div><div class="food-item-holder" id="menu_item_6569681"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/67/a3052d50b8409596346427060f4c33/full" srcset="//static.spotapps.co/spots/67/a3052d50b8409596346427060f4c33/small 200w, //static.spotapps.co/spots/67/a3052d50b8409596346427060f4c33/medium 400w, //static.spotapps.co/spots/67/a3052d50b8409596346427060f4c33/full 800w" id="item_image_6569681" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Watermelon Salad</h3></div><div class="food-price">$16</div><div class="food-item-description">Arugula w/ Feta Cheese and Balsamic Vinaigrette</div></div><div class="food-item-holder" id="menu_item_4917245"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/16/3a16f61ee64801b6bb864dc2400c13/full" srcset="//static.spotapps.co/spots/16/3a16f61ee64801b6bb864dc2400c13/small 200w, //static.spotapps.co/spots/16/3a16f61ee64801b6bb864dc2400c13/medium 400w, //static.spotapps.co/spots/16/3a16f61ee64801b6bb864dc2400c13/full 800w" id="item_image_4917245" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Veggie Platter (V)</h3></div><div class="food-price">$28</div><div class="food-item-description">Choose 4 Sides - Limited to one of each choice</div></div></div></div></section></div><!-- end of food menu grod item --><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Sandwiches &amp; Burgers</h2><div class="food-menu-description"><p>Add: Bacon +$2.00<br/>
+Grilled Onions +$0.75<br/>
+American, Cheddar, Mozzarella, or Monterey Jack Cheese +$1.50</p></div><div class="food-menu-content"><div class="food-item-holder" id="menu_item_4928404"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Sylvia’s Chicken Sandwich</h3></div><div class="food-price">$20</div><div class="food-item-description">With French Fries <br/> Fried, grilled or BBQ chicken breast on a toasted brioche bun with mayo and house pickles .</div></div><div class="food-item-holder" id="menu_item_4916847"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Sylvia’s Sassy Angus Beef Burger</h3></div><div class="food-price">$23</div><div class="food-item-description">With French Fries <br/> Sylvia’s signature beef burger on a brioche bun with lettuce, tomato, sliced onion, and house pickles, cooked medium well unless otherwise specified.</div></div></div></div></section></div><!-- end of food menu grod item --><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Waffle Selections</h2><div class="food-menu-content"><div class="food-item-holder" id="menu_item_4911719"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Waffle (V)</h3></div><div class="food-price">$14</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4911726"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/35/ad8233d2d448c7a06e576613715180/full" srcset="//static.spotapps.co/spots/35/ad8233d2d448c7a06e576613715180/small 200w, //static.spotapps.co/spots/35/ad8233d2d448c7a06e576613715180/medium 400w, //static.spotapps.co/spots/35/ad8233d2d448c7a06e576613715180/full 800w" id="item_image_4911726" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Waffle with Harlem Style Fried Chicken</h3></div><div class="food-price">$24</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4911730"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Waffle with  Carolina Style Smothered Chicken</h3></div><div class="food-price">$24</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4928560"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Waffle with Chicken Wings</h3></div><div class="food-price">$24/4 pcs</div><div class="food-item-description"></div></div></div></div></section></div><!-- end of food menu grod item --><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Combinations</h2><div class="food-menu-description"><p>Note: Premium Sides of Traditional or Vegetarian Collard Greens and Baked Macaroni &amp; Cheese are a $2 upcharge</p></div><div class="food-menu-content"><div class="food-item-holder" id="menu_item_5906959"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/c5/8fe157c043487fb463db6362f41d3e/full" srcset="//static.spotapps.co/spots/c5/8fe157c043487fb463db6362f41d3e/small 200w, //static.spotapps.co/spots/c5/8fe157c043487fb463db6362f41d3e/medium 400w, //static.spotapps.co/spots/c5/8fe157c043487fb463db6362f41d3e/full 800w" id="item_image_5906959" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Sylvia’s World-Famous Bar-B-Que Pork Ribs &amp; Fried or Smothered Chicken</h3></div><div class="food-price">$35</div><div class="food-item-description">With Sylvia’s original sassy sauce.</div></div></div></div></section></div><!-- end of food menu grod item --><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Side Orders</h2><div class="food-menu-description"><p>Note: Premium Sides of Traditional or Vegetarian Collard Greens and Baked Macaroni &amp; Cheese are a $2 upcharge</p></div><div class="food-menu-content"><div class="food-item-holder" id="menu_item_4916871"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/35/cf48dfa2214513807745562fea9e44/full" srcset="//static.spotapps.co/spots/35/cf48dfa2214513807745562fea9e44/small 200w, //static.spotapps.co/spots/35/cf48dfa2214513807745562fea9e44/medium 400w, //static.spotapps.co/spots/35/cf48dfa2214513807745562fea9e44/full 800w" id="item_image_4916871" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Traditional Collard Greens (GF)</h3></div><div class="food-price">$11</div><div class="food-item-description">Premium Side</div></div><div class="food-item-holder" id="menu_item_4916876"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/e4/8626f350ed4db8ab198f57ad25062f/full" srcset="//static.spotapps.co/spots/e4/8626f350ed4db8ab198f57ad25062f/small 200w, //static.spotapps.co/spots/e4/8626f350ed4db8ab198f57ad25062f/medium 400w, //static.spotapps.co/spots/e4/8626f350ed4db8ab198f57ad25062f/full 800w" id="item_image_4916876" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Vegetarian Collard Greens (V, GF)</h3></div><div class="food-price">$11</div><div class="food-item-description">Premium Side</div></div><div class="food-item-holder" id="menu_item_4916854"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/6b/1447b4d4af47b6b828978ba1ecdbd8/full" srcset="//static.spotapps.co/spots/6b/1447b4d4af47b6b828978ba1ecdbd8/small 200w, //static.spotapps.co/spots/6b/1447b4d4af47b6b828978ba1ecdbd8/medium 400w, //static.spotapps.co/spots/6b/1447b4d4af47b6b828978ba1ecdbd8/full 800w" id="item_image_4916854" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Baked Macaroni &amp; Cheese (V)</h3></div><div class="food-price">$11</div><div class="food-item-description">Premium Side</div></div><div class="food-item-holder" id="menu_item_4916859"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Candied Yams (V, GF)</h3></div><div class="food-price">$8</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4916864"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/79/7a879d53b147fa8bc6c52ab5e9b2ea/full" srcset="//static.spotapps.co/spots/79/7a879d53b147fa8bc6c52ab5e9b2ea/small 200w, //static.spotapps.co/spots/79/7a879d53b147fa8bc6c52ab5e9b2ea/medium 400w, //static.spotapps.co/spots/79/7a879d53b147fa8bc6c52ab5e9b2ea/full 800w" id="item_image_4916864" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Potato Salad (V, GF)</h3></div><div class="food-price">$8</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4916880"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/f5/c29ab07a304d50a3a2272909eb8030/full" srcset="//static.spotapps.co/spots/f5/c29ab07a304d50a3a2272909eb8030/small 200w, //static.spotapps.co/spots/f5/c29ab07a304d50a3a2272909eb8030/medium 400w, //static.spotapps.co/spots/f5/c29ab07a304d50a3a2272909eb8030/full 800w" id="item_image_4916880" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Steamed Rice</h3></div><div class="food-price">$7</div><div class="food-item-description">With brown gravy.</div></div><div class="food-item-holder" id="menu_item_4916883"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/65/6a8d623eae4368ad55c961f873e3e7/full" srcset="//static.spotapps.co/spots/65/6a8d623eae4368ad55c961f873e3e7/small 200w, //static.spotapps.co/spots/65/6a8d623eae4368ad55c961f873e3e7/medium 400w, //static.spotapps.co/spots/65/6a8d623eae4368ad55c961f873e3e7/full 800w" id="item_image_4916883" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Grits (V)</h3></div><div class="food-price">$7</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4916887"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/44/fe6982ad564260a64c58d43e0a7414/full" srcset="//static.spotapps.co/spots/44/fe6982ad564260a64c58d43e0a7414/small 200w, //static.spotapps.co/spots/44/fe6982ad564260a64c58d43e0a7414/medium 400w, //static.spotapps.co/spots/44/fe6982ad564260a64c58d43e0a7414/full 800w" id="item_image_4916887" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>String Beans (V, GF)</h3></div><div class="food-price">$8</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4916892"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/84/f0dc708fe340a4ad497ff40453914d/full" srcset="//static.spotapps.co/spots/84/f0dc708fe340a4ad497ff40453914d/small 200w, //static.spotapps.co/spots/84/f0dc708fe340a4ad497ff40453914d/medium 400w, //static.spotapps.co/spots/84/f0dc708fe340a4ad497ff40453914d/full 800w" id="item_image_4916892" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Pickled Beets (V, GF)</h3></div><div class="food-price">$8</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4916903"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/84/d1a5efce994d01ab23fdefbcfe4975/full" srcset="//static.spotapps.co/spots/84/d1a5efce994d01ab23fdefbcfe4975/small 200w, //static.spotapps.co/spots/84/d1a5efce994d01ab23fdefbcfe4975/medium 400w, //static.spotapps.co/spots/84/d1a5efce994d01ab23fdefbcfe4975/full 800w" id="item_image_4916903" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Black Eyed Peas (GF)</h3></div><div class="food-price">$9</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4916899"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Sassy Rice (V, GF)</h3></div><div class="food-price">$8</div><div class="food-item-description">Fri/Sat/Sun</div></div><div class="food-item-holder" id="menu_item_4916905"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/d0/5d16c339ff48a190ca9da4d59525fa/full" srcset="//static.spotapps.co/spots/d0/5d16c339ff48a190ca9da4d59525fa/small 200w, //static.spotapps.co/spots/d0/5d16c339ff48a190ca9da4d59525fa/medium 400w, //static.spotapps.co/spots/d0/5d16c339ff48a190ca9da4d59525fa/full 800w" id="item_image_4916905" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Cornbread</h3></div><div class="food-price">$3</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4916938"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/17/ab38dd982b4b88b59617000fb57437/full" srcset="//static.spotapps.co/spots/17/ab38dd982b4b88b59617000fb57437/small 200w, //static.spotapps.co/spots/17/ab38dd982b4b88b59617000fb57437/medium 400w, //static.spotapps.co/spots/17/ab38dd982b4b88b59617000fb57437/full 800w" id="item_image_4916938" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Sylvia’s Sassy BBQ Sauce (GF, V)</h3></div><div class="food-price">$3</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4928609"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/2a/27c41a275748678dc3ea90ee6636d3/full" srcset="//static.spotapps.co/spots/2a/27c41a275748678dc3ea90ee6636d3/small 200w, //static.spotapps.co/spots/2a/27c41a275748678dc3ea90ee6636d3/medium 400w, //static.spotapps.co/spots/2a/27c41a275748678dc3ea90ee6636d3/full 800w" id="item_image_4928609" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Sylvia’s Brown Gravy (V)</h3></div><div class="food-price">$3</div><div class="food-item-description"></div></div></div></div></section></div><!-- end of food menu grod item --><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Dessert</h2><div class="food-menu-content"><div class="food-item-holder" id="menu_item_4916955"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Coconut Pineapple Cake</h3></div><div class="food-price">$10</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4916957"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/1a/d9aac39a7141bf8d323a94b535cc5c/full" srcset="//static.spotapps.co/spots/1a/d9aac39a7141bf8d323a94b535cc5c/small 200w, //static.spotapps.co/spots/1a/d9aac39a7141bf8d323a94b535cc5c/medium 400w, //static.spotapps.co/spots/1a/d9aac39a7141bf8d323a94b535cc5c/full 800w" id="item_image_4916957" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Red Velvet Cake</h3></div><div class="food-price">$10</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4928611"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/6d/3cdf0121ae4c4585b8cb2e28de7c87/full" srcset="//static.spotapps.co/spots/6d/3cdf0121ae4c4585b8cb2e28de7c87/small 200w, //static.spotapps.co/spots/6d/3cdf0121ae4c4585b8cb2e28de7c87/medium 400w, //static.spotapps.co/spots/6d/3cdf0121ae4c4585b8cb2e28de7c87/full 800w" id="item_image_4928611" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Chocolate Layer Cake</h3></div><div class="food-price">$10</div><div class="food-item-description">Vanilla cake with chocolate frosting.</div></div><div class="food-item-holder" id="menu_item_4916960"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/55/57c8239b854d8ab9f7ede63f137d67/full" srcset="//static.spotapps.co/spots/55/57c8239b854d8ab9f7ede63f137d67/small 200w, //static.spotapps.co/spots/55/57c8239b854d8ab9f7ede63f137d67/medium 400w, //static.spotapps.co/spots/55/57c8239b854d8ab9f7ede63f137d67/full 800w" id="item_image_4916960" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Sweet Potato Pie</h3></div><div class="food-price">$12</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4916963"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/66/290d80ad8c47b2a3a2fa3cb6fbe9f4/full" srcset="//static.spotapps.co/spots/66/290d80ad8c47b2a3a2fa3cb6fbe9f4/small 200w, //static.spotapps.co/spots/66/290d80ad8c47b2a3a2fa3cb6fbe9f4/medium 400w, //static.spotapps.co/spots/66/290d80ad8c47b2a3a2fa3cb6fbe9f4/full 800w" id="item_image_4916963" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Peach Cobbler</h3></div><div class="food-price">$12</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4928613"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Peach Cobbler Waffle</h3></div><div class="food-price">$12</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_5907020"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Banana Pudding</h3></div><div class="food-price">$12</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4928615"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Vanilla Ice Cream</h3></div><div class="food-price">$7</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_5907022"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>A La Mode</h3></div><div class="food-price">$4.50</div><div class="food-item-description">Add ice cream to any dessert</div></div></div></div></section></div><!-- end of food menu grod item --></div><!-- end of food menu --><div class="menu_1084806 food-menu-grid" style="display:none"><div class="food-menu-grid-sizer"></div><div class="food-menu-grid-item  food-menu-grid-item--width2"><section><div class="food-menu-grid-item-content"><h2>Menu</h2><div class="food-menu-description"><p>Available Monday thru Friday 12p - 4p except holidays<br/>
+Includes 1 Side Order <br/>
+Note: Premium Sides of Traditional or Vegetarian Collard Greens and Baked Macaroni &amp; Cheese are an additional +$2.00 each</p></div><div class="food-menu-content"><div class="food-item-holder" id="menu_item_4916946"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Chicken Leg</h3></div><div class="food-price">$17</div><div class="food-item-description">Fried or smothered</div></div><div class="food-item-holder" id="menu_item_4916948"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Chicken Livers</h3></div><div class="food-price">$17</div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_4929331"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>1 Pork Chop</h3></div><div class="food-price">$17</div><div class="food-item-description">Fried or smothered</div></div><div class="food-item-holder" id="menu_item_4929332"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Fried Whiting</h3></div><div class="food-price">$17</div><div class="food-item-description"></div></div></div></div></section></div><!-- end of food menu grod item --></div><!-- end of food menu --><div class="menu_1084807 food-menu-grid" style="display:none"><div class="food-menu-grid-sizer"></div><div class="food-menu-grid-item  food-menu-grid-item--width2"><section><div class="food-menu-grid-item-content"><h2>Menu</h2><div class="food-menu-content"><div class="food-item-holder" id="menu_item_4929409"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Wednesday</h3></div><div class="food-price">$45</div><div class="food-item-description">OXTAILS A Taste of the South: Braised Oxtails served with Mixed Greens Salad and your choice of Steamed Rice, Sassy Rice or Rice &amp; Peas (subject to availability)</div></div><div class="food-item-holder" id="menu_item_4917086"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/76/71a0c0c3fb4d459f250381932033cd/full" srcset="//static.spotapps.co/spots/76/71a0c0c3fb4d459f250381932033cd/small 200w, //static.spotapps.co/spots/76/71a0c0c3fb4d459f250381932033cd/medium 400w, //static.spotapps.co/spots/76/71a0c0c3fb4d459f250381932033cd/full 800w" id="item_image_4917086" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Thursday</h3></div><div class="food-price">$27</div><div class="food-item-description">STEWED TURKEY WINGS <br/> w/ Homemade Cornbread Dressing and your choice of one additional side</div></div><div class="food-item-holder" id="menu_item_6856621"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/11/c79c5a63714a35a913108364de4ca8/full" srcset="//static.spotapps.co/spots/11/c79c5a63714a35a913108364de4ca8/small 200w, //static.spotapps.co/spots/11/c79c5a63714a35a913108364de4ca8/medium 400w, //static.spotapps.co/spots/11/c79c5a63714a35a913108364de4ca8/full 800w" id="item_image_6856621" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Friday, Saturday &amp; Sunday</h3></div><div class="food-price">$30</div><div class="food-item-description">PETITE MARINATED GRILLED LAMB CHOPS Tender, herb-marinated lamb chops, grilled to perfection and served with our house-made chimichurri sauce on a bed of mixed greens salad</div></div><div class="food-item-holder" id="menu_item_6856622"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/91/894d5f2ba74371b111e8681713885d/full" srcset="//static.spotapps.co/spots/91/894d5f2ba74371b111e8681713885d/small 200w, //static.spotapps.co/spots/91/894d5f2ba74371b111e8681713885d/medium 400w, //static.spotapps.co/spots/91/894d5f2ba74371b111e8681713885d/full 800w" id="item_image_6856622" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Friday, Saturday &amp; Sunday</h3></div><div class="food-price">$45</div><div class="food-item-description">GRILLED BBQ SHORT RIBS OF BEEF w/ Mixed Greens Salad and your choice of Garlic Mashed Potatoes, French Fries or Steamed Rice</div></div><div class="food-item-holder" id="menu_item_6856623"><!-- START the SH menu item photo --><div class="food-item-photo-holder"><img alt="" class="img-responsive " sizes="auto" src="//static.spotapps.co/spots/55/8379bb590646fb8f8287c259ec9327/full" srcset="//static.spotapps.co/spots/55/8379bb590646fb8f8287c259ec9327/small 200w, //static.spotapps.co/spots/55/8379bb590646fb8f8287c259ec9327/medium 400w, //static.spotapps.co/spots/55/8379bb590646fb8f8287c259ec9327/full 800w" id="item_image_6856623" /></div><!-- END the SH menu item photo --><div class="food-item-title"><h3>Friday, Saturday &amp; Sunday</h3></div><div class="food-price">$30</div><div class="food-item-description">TIME HONORED SOUTHERN STYLE CHITTERLINGS w/ Hog Maws - Southern Delicacy prepared in our traditional recipe</div></div></div></div></section></div><!-- end of food menu grod item --></div><!-- end of food menu --><div class="menu_1086644 food-menu-grid" style="display:none"><div class="food-menu-grid-sizer"></div><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Family Style Brunch Menu</h2><div class="food-menu-description"><p>Available Monday to Saturday 11:00 am - 3:00 pm<br/><br/>
+Golden Family Style $30.00<br/>
+Scrambled eggs and your choice of 2 entrées.<br/><br/>
+Platinum Family Style $35.00<br/>
+Scrambled eggs and your choice of 3 entrées.<br/><br/>
+Combread included:</p></div><div class="food-menu-content"><div class="food-item-holder" id="menu_item_4918927"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Entrées</h3></div><div class="food-item-description">Commeal Fried Whiting<br/>
+Salmon Croquettes<br/>
+Sylvia&apos;s Down Home Fried Chicken<br/>
+Smothered Chicken<br/>
+Baked Chicken Seasoned to Perfection with Fresh Herbs<br/>
+Chicken Livers with Sylvia&apos;s Brown Gravy</div></div><div class="food-item-holder" id="menu_item_4918931"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Side Orders</h3></div><div class="food-item-description">Choose 1:<br/>
+Grits<br/>
+Homestyle Potatoes</div></div><div class="food-item-holder" id="menu_item_4918932"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Beverages</h3></div><div class="food-item-description">Assorted Juices</div></div><div class="food-item-holder" id="menu_item_4918935"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Add - Ons</h3></div><div class="food-item-description">Regular Bacon +$6.00 per person</div></div></div></div></section></div><!-- end of food menu grod item --><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Family Style Lunch Special</h2><div class="food-menu-description"><p>$32.00<br/>
+Available Monday to Friday 11:00 am - 4:00 pm<br/><br/>
+Kid&apos;s Price - Available for children 10 years old and younger $19.00</p></div><div class="food-menu-content"><div class="food-item-holder" id="menu_item_4918938"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Entrées</h3></div><div class="food-item-description">Choose 2:<br/>
+Sylvia&apos;s Down Home Fried Chicken<br/>
+Barbecue Chicken<br/>
+Baked Chicken Seasoned to Perfection with Fresh Herbs<br/>
+Commeal Fried Whiting<br/><br/>
+Each additional entrée +$10.00 per person</div></div><div class="food-item-holder" id="menu_item_4918942"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Side Orders</h3></div><div class="food-item-description">Choose 2:<br/>
+Potato Salad<br/>
+Sassy Rice: Rice Sautéed with Sylvia&apos;s Sassy Barbecue Sauce, Onions, Bell Peppers, and Carrots<br/>
+String Beans</div></div><div class="food-item-holder" id="menu_item_4918949"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Premium Side Order</h3></div><div class="food-item-description">Traditional Collard Greens (+$3.00 per person)<br/>
+Vegetarian Collard Greens (+$3.00 per person)</div></div><div class="food-item-holder" id="menu_item_4918950"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Beverages</h3></div><div class="food-item-description">Soft Drinks</div></div></div></div></section></div><!-- end of food menu grod item --><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Family Style Dinner Menu</h2><div class="food-menu-description"><p>$43.00 <br/>
+Available Sunday to Tuesday 12:00 pm - 8:00 pm &amp; Thursday to Saturday 12:00 pm - 10:00 pm</p></div><div class="food-menu-content"><div class="food-item-holder" id="menu_item_4918977"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Entrées</h3></div><div class="food-item-description">Choose 2:<br/>
+Sylvia&apos;s Down Home Fried Chicken<br/>
+Sylvia&apos;s World-Famous Bar-B-Que Ribs<br/>
+Baked Chicken<br/>
+Cornmeal Fried Whiting</div></div><div class="food-item-holder" id="menu_item_4918984"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Premium Entrées</h3></div><div class="food-item-description">Baked Catfish (+$4.00 per person)<br/>
+Sassy Style Beef (+$4.00 per person)<br/>
+Diced Beef Ribs with Onions, Celery, Carrots, and Bell Pepper tossed in Sylvia&apos;s Sassy<br/>
+Barbecue Sauce<br/><br/>
+Each additional entrée +$10 per person</div></div><div class="food-item-holder" id="menu_item_4919006"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Side Orders</h3></div><div class="food-item-description">Potato Salad<br/>
+String Beans<br/>
+Sassy Rice: Rice Sautéed with Sylvia&apos;s Sassy Barbecue Sauce, Onions, Bell Peppers, and Carrots</div></div><div class="food-item-holder" id="menu_item_4919024"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Premium Side Order</h3></div><div class="food-item-description">Traditional Collard Greens (+$3.00 per person)<br/>
+Vegetarian Collard Greens (+$3.00 per person)<br/>
+Each additional side +$7.00 per person</div></div><div class="food-item-holder" id="menu_item_4919032"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Beverages</h3></div><div class="food-item-description">Soft Drinks</div></div><div class="food-item-holder" id="menu_item_4919037"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Dessert</h3></div><div class="food-item-description">Banana Pudding</div></div></div></div></section></div><!-- end of food menu grod item --></div><!-- end of food menu --><div class="menu_1086619 food-menu-grid" style="display:none"><div class="food-menu-grid-sizer"></div><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Brunch Menu</h2><div class="food-menu-description"><p>Available Monday to Sunday 11:00 am -2:00 pm<br/>
+30 guest minimum</p></div><div class="food-menu-content"><div class="food-item-holder" id="menu_item_4918850"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Meal Includes</h3></div><div class="food-item-description">Scrambled Eggs<br/>
+Biscuits</div></div><div class="food-item-holder" id="menu_item_4918853"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Meats</h3></div><div class="food-item-description">Choice of 2:<br/>
+Down Home Southern Fried Chicken<br/>
+Salmon Croquettes<br/>
+Country Fried Whiting<br/>
+Regular or Slab Bacon<br/>
+Beef or Pork Sausage</div></div><div class="food-item-holder" id="menu_item_4918857"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Sides</h3></div><div class="food-item-description">Choice of 2:<br/>
+Country Style Grits<br/>
+Home Fried Potatoes with Onions &amp; Peppers<br/>
+Sassy Rice<br/>
+Garden Mixed Green Salad</div></div><div class="food-item-holder" id="menu_item_4918860"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Beverage</h3></div><div class="food-item-description">Choice of 1:<br/>
+Sylvia&apos;s Uptown Iced Tea<br/>
+Orange Juice<br/>
+Cranberry Juice</div></div></div></div></section></div><!-- end of food menu grod item --><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Golden Buffet Menu</h2><div class="food-menu-description"><p>Available Monday to Sunday <br/>
+30 guest minimum</p></div><div class="food-menu-content"><div class="food-item-holder" id="menu_item_4918865"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Entrées</h3></div><div class="food-item-description">Choice of 2:<br/>
+Baked Whiting with Onions &amp; Peppers<br/>
+Fried Whiting<br/>
+Down Home Southern Fried Chicken<br/>
+Herbed Baked Chicken<br/>
+BBQ Chicken<br/>
+Sylvia&apos;s World-Famous BBQ Pork Ribs</div></div><div class="food-item-holder" id="menu_item_4918872"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Southern Sides</h3></div><div class="food-item-description">Choice of 3:<br/>
+Herb Roasted Potatoes | Garlic Mashed Potatoes<br/>
+Candied Yams |Three Cheese Baked Macaroni<br/>
+White Rice | Sassy Rice | Peas &amp; Rice<br/>
+Black Eyed Peas Seasoned with Smoked Turkey | String Beans<br/>
+Traditional or Vegetarian Collard Greens<br/>
+Black Eye Pea Salad | Garden Salad | Potato Salad</div></div><div class="food-item-holder" id="menu_item_4918875"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Dessert</h3></div><div class="food-item-description">Choice of 1:<br/>
+Peach Cobbler<br/>
+Banana Pudding</div></div><div class="food-item-holder" id="menu_item_4918878"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Beverage</h3></div><div class="food-item-description">Sylvia&apos;s Uptown Iced Tea</div></div></div></div></section></div><!-- end of food menu grod item --><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Platinum Buffet Menu</h2><div class="food-menu-description"><p>Available Monday to Sunday <br/>
+30 guest minimum</p></div><div class="food-menu-content"><div class="food-item-holder" id="menu_item_4918893"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Entrees</h3></div><div class="food-item-description">Choice of 3:<br/>
+Sylvia&apos;s World-Famous BBQ Pork Ribs<br/>
+Down Home Southern Fried Chicken - Baked |Smothered | BBQ Chicken<br/>
+Traditional Caribbean Style Curry Chicken | Caribbean Style Jerk Chicken<br/>
+Roast Turkey with Cornbread Stuffing<br/>
+Baked Catfish with Lemon Butter Sauce<br/>
+Fried or Baked Catfish | Caribbean Style Whiting Escovitch | Fried Whiting<br/>
+Baked Salmon with Mango Salsa | Barbeque Salmon<br/>
+Pork Tenderloin with Apple Raisin Stuffing<br/>
+Grilled BBQ Short Ribs | Sassy Beef with Sylvia&apos;s Special Sauce, Carrots, Onions &amp; Peppers</div></div><div class="food-item-holder" id="menu_item_4918904"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Side Dishes / Salads</h3></div><div class="food-item-description">Choice of 3: <br/>
+Herb Roasted Potatoes | Garlic Mashed Potatoes | Candied Yams<br/>
+Three Cheese Baked Macaroni<br/>
+White Rice | Sassy Rice | Peas &amp; Rice<br/>
+Black Eyed Peas Seasoned with Smoked Turkey | String Beans | Glazed Carrots<br/>
+Traditional or Vegetarian Collard Greens<br/>
+Black Eyed Pea Salad | Garden Salad | Potato Salad<br/><br/>
+Cornbread comes with a meal.</div></div><div class="food-item-holder" id="menu_item_4918910"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Dessert</h3></div><div class="food-item-description">Choice of 1:<br/>
+Peach Cobbler | Banana Pudding<br/>
+Red Velvet Cake | Chocolate Cake</div></div><div class="food-item-holder" id="menu_item_4918911"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Beverage</h3></div><div class="food-item-description">Sylvia&apos;s Uptown Iced Tea</div></div></div></div></section></div><!-- end of food menu grod item --></div><!-- end of food menu --><div class="menu_1086668 food-menu-grid" style="display:none"><div class="food-menu-grid-sizer"></div><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Hors D’oeuvres Menu</h2><div class="food-menu-description"><p>30 guest minimum for on premise events<br/><br/>
+* In house only</p></div><div class="food-menu-content"><div class="food-item-holder" id="menu_item_4919102"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Cold</h3></div><div class="food-item-description">Vegetable Crudités<br/>
+Seasonal Fruit Platter<br/>
+Domestic &amp; Imported Cheese Platter<br/>
+Curry Chicken Salad Tart</div></div><div class="food-item-holder" id="menu_item_4919108"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Hot</h3></div><div class="food-item-description">Black Eyed Pea Fritters<br/>
+Cornbread Tartlet with Black Eyed Pea Pate<br/>
+Three Cheese Baked Macaroni Mini Bites<br/>
+Vegetable Spring Rolls</div></div><div class="food-item-holder" id="menu_item_4919114"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Seafood</h3></div><div class="food-item-description">* Buffalo Shrimp with Blue Cheese Dipping Sauce<br/>
+Catfish Fingers<br/>
+* Coconut Shrimp Skewers with Mango Dipping Sauce<br/>
+Southern Style Corn Crab Cakes with Spicy Remoulade Dipping Sauce<br/>
+*Shrimp &amp; Grits Shot<br/>
+Salmon Croquette Bites<br/>
+Spicy Fish Fritters  with Spicy Remoulade Dipping Sauce</div></div><div class="food-item-holder" id="menu_item_4919120"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Poultry</h3></div><div class="food-item-description">Chicken Sate<br/>
+Sassy Wings<br/>
+Sesame Honey BBQ Wings<br/>
+Southern Fried Chicken Bites<br/>
+Jerk Chicken Wings</div></div><div class="food-item-holder" id="menu_item_4919122"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Pork</h3></div><div class="food-item-description">BBQ Rib Bites<br/>
+Pulled Pork Sliders with Collard Green Slaw</div></div><div class="food-item-holder" id="menu_item_4919123"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Beef</h3></div><div class="food-item-description">BBQ Meatballs <br/>
+Beef Sliders</div></div><div class="food-item-holder" id="menu_item_4919124"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Lamb</h3></div><div class="food-item-description">Lamb Chops</div></div></div></div></section></div><!-- end of food menu grod item --><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>A La Carte Menu</h2><div class="food-menu-description"><p>15 guest minimum</p></div><div class="food-menu-content"><div class="food-item-holder" id="menu_item_4919131"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Entrees - Poultry</h3></div><div class="food-item-description">Down Home Southern Fried Chicken<br/>
+Herb Baked Chicken<br/>
+Smothered Chicken<br/>
+BBQ Chicken<br/>
+Traditional Caribbean Style Curry Chicken<br/>
+Caribbean Style Jerk Chicken<br/>
+Chicken with Portabella Mushroom Sauce<br/>
+Roast Turkey</div></div><div class="food-item-holder" id="menu_item_4919133"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Entrees - Pork</h3></div><div class="food-item-description">Sylvia’s World-Famous BBQ Pork Ribs<br/>
+Pork Tenderloin with Apple Raisin Stuffing</div></div><div class="food-item-holder" id="menu_item_4919138"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Entrees - Beef</h3></div><div class="food-item-description">Short Ribs of Beef with Gravy, Mushrooms &amp; Sautéed Onions<br/>
+Sassy Style Beef with Grilled Onions, Sweet Green Peppers &amp; Carrots</div></div><div class="food-item-holder" id="menu_item_4919146"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Entrees - Seafood</h3></div><div class="food-item-description">Baked Catfish with Lemon Butter Sauce<br/>
+Fried Catfish<br/>
+Baked Whiting with  Onions &amp; Peppers<br/>
+Fried Whiting<br/>
+Caribbean Style Whiting Escovitch<br/>
+Baked Salmon with Mango Salsa<br/>
+Baked Barbeque Salmon<br/>
+Fried Shrimp</div></div><div class="food-item-holder" id="menu_item_4919151"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Side Dishes</h3></div><div class="food-item-description">Garlic Mashed Potatoes<br/>
+Roasted Potatoes with Yams<br/>
+Candied Yams<br/>
+Three Cheese Baked Macaroni<br/>
+White Rice<br/>
+Sassy Rice<br/>
+Peas &amp; Rice<br/>
+Black Eyed Peas Seasoned with Smoked Turkey<br/>
+Traditional or Vegetarian Collard Greens<br/>
+Collard Greens and Cabbage with Roasted Garlic<br/>
+String Beans<br/>
+Glazed Carrots<br/>
+Cornbread Stuffing<br/>
+Cornbread Squares</div></div><div class="food-item-holder" id="menu_item_4919153"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Salad</h3></div><div class="food-item-description">Black Eyed Pea Salad<br/>
+Green Garden Salad<br/>
+Potato Salad</div></div><div class="food-item-holder" id="menu_item_4919154"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Desserts</h3></div><div class="food-item-description">Peach Cobbler<br/>
+Banana Pudding<br/>
+Red Velvet Cake<br/>
+Chocolate Cake<br/>
+Double Chocolate Cake</div></div></div></div></section></div><!-- end of food menu grod item --></div><!-- end of food menu --><div class="menu_1576025 food-menu-grid" style="display:none"><div class="food-menu-grid-sizer"></div><div class="food-menu-grid-item food-menu-grid-item--width2"><div class="menu-description"><p>$30<br/>
+Available Monday-Friday, 11:00am -4:00pm<br/>
+Choose one entree and one dessert</p></div></div><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Entrees</h2><div class="food-menu-content"><div class="food-item-holder" id="menu_item_6817660"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Sylvia&apos;s Chicken Sandwich</h3></div><div class="food-item-description">Choice of Fried, Grilled or BBQ Chicken Breast served with French Fries</div></div><div class="food-item-holder" id="menu_item_6817661"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Chicken &amp; Waffle</h3></div><div class="food-item-description">Choice of Harlem-Style Fried Chicken or Carolina-Style Smothered Chicken</div></div></div></div></section></div><!-- end of food menu grod item --><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Desserts</h2><div class="food-menu-content"><div class="food-item-holder" id="menu_item_6817662"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Banana Pudding</h3></div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_6817663"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Peach Cobbler</h3></div><div class="food-item-description"></div></div></div></div></section></div><!-- end of food menu grod item --></div><!-- end of food menu --><div class="menu_1576048 food-menu-grid" style="display:none"><div class="food-menu-grid-sizer"></div><div class="food-menu-grid-item food-menu-grid-item--width2"><div class="menu-description"><p>$45<br/>
+Available Monday-Friday after 4:00pm<br/>
+Choose one appetizer, one entree and one dessert</p></div></div><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Appetizers</h2><div class="food-menu-content"><div class="food-item-holder" id="menu_item_6817665"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Spicy Fish Fritters</h3></div><div class="food-item-description">Crispy seasoned fish fritter with house dipping sauce</div></div><div class="food-item-holder" id="menu_item_6817666"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Watermelon Salad</h3></div><div class="food-item-description">Fresh watermelon, arugula, feta cheese and balsamic vinaigrette</div></div><div class="food-item-holder" id="menu_item_6817668"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Chicken Livers</h3></div><div class="food-item-description">Sauteed with onions and peppers. Served with Sylvia&apos;s Brown Gravy.</div></div></div></div></section></div><!-- end of food menu grod item --><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Entrees</h2><div class="food-menu-content"><div class="food-item-holder" id="menu_item_6817670"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Sylvia&apos;s Down Home Fried Chicken</h3></div><div class="food-item-description">Crispy, golden and seasoned with Sylvia&apos;s signature blend</div></div><div class="food-item-holder" id="menu_item_6817671"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Oven Baked Half Chicken</h3></div><div class="food-item-description">Seasoned to perfection with fresh herbs and Southern spices</div></div><div class="food-item-holder" id="menu_item_6817675"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Sylvia&apos;s World-Famous BBQ Pork Ribs</h3></div><div class="food-item-description">Tender pork ribs with Sylvia&apos;s Original Sassy Sauce</div></div><div class="food-item-holder" id="menu_item_6817676"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Choose Two Sides</h3></div><div class="food-item-description">Potato Salad, Candied Yams, Steamed Rice and Gravy, Grits, String Beans, Pickled Beets, Black-Eyed Peas</div></div></div></div></section></div><!-- end of food menu grod item --><div class="food-menu-grid-item "><section><div class="food-menu-grid-item-content"><h2>Desserts</h2><div class="food-menu-content"><div class="food-item-holder" id="menu_item_6817678"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Banana Pudding</h3></div><div class="food-item-description"></div></div><div class="food-item-holder" id="menu_item_6817679"><!-- START the SH menu item photo --><!-- END the SH menu item photo --><div class="food-item-title"><h3>Peach Cobbler</h3></div><div class="food-item-description"></div></div></div></div></section></div><!-- end of food menu grod item --></div><!-- end of food menu --></div></div></div></article></main></div><style type="text/css">
+    .navbar-fixed-bottom.nav-v1 {
+        bottom: -100px;
+    }
+    .navbar-fixed-bottom.nav-v1 .nav.navbar-nav.navbar-right {
+        background-color: #000;
+    }
+    .navbar-fixed-bottom.nav-v1 .bottom-svg-border path,
+    .navbar-fixed-bottom.nav-v1 .bottom-svg-border polygon {
+      fill: #000;
+    }
+    .navbar-fixed-bottom.nav-v1 .bottom-list-item a {
+        color: #fff;
+    }
+    .navbar-fixed-bottom.nav-v1 .bottom-list-item a:hover,
+    .navbar-fixed-bottom.nav-v1 .bottom-list-item a:focus {
+        color: #A37500;
+    }
+</style><nav aria-label="mobile footer" class="navbar-fixed-bottom nav-v1" id="bottom-navbar"><div><ul class="nav navbar-nav navbar-right"><li class="bottom-list-item "><a class="bottom-link " href="https://direct.chownow.com/order/22566/locations/32842" id="bottom_link_4" target="_self">
+                        Order                    </a></li><li class="bottom-list-item "><a class="bottom-link " href="https://resy.com/cities/new-york-ny/venues/sylvias-restaurant?date=2026-08-11&seats=2" id="bottom_link_3" target="_self">
+                        Reserve                    </a></li><li class="bottom-list-item "><a class="bottom-link " href="/party" id="bottom_link_5" target="_self">
+                        Parties                    </a></li><li class="bottom-list-item "><a class="bottom-link " href="https://sylviasrestaurant.isolvedhire.com/jobs/" id="bottom_link_7" target="_self">
+                        Jobs                    </a></li></ul></div></nav><!-- Script which will insert Shopping cart component (like MT does) --><!--  --><link href="https://wcache-plugins.spotapps.co/production/wcpl_bday_club/wcpl_bday_club.css" rel="stylesheet" media="screen"/><link href="https://wcache-plugins.spotapps.co/production/wcpl_website_editor_interpreter/website_interpreter_helper_style.css" rel="stylesheet" media="screen"/>

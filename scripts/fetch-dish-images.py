@@ -27,6 +27,12 @@ DISHES = {
     "sassy-rice": ["Dirty rice", "Rice and gravy"],
     "biscuits": ["Biscuit (bread)", "Biscuits and gravy"],
     "catfish-fingers": ["Fish finger", "Fried fish"],
+    # Dishes Sylvia's own menu has no photo for — openly-licensed stand-ins.
+    "angus-burger": ["Hamburger", "Cheeseburger"],
+    "caesar-salad": ["Caesar salad"],
+    "coconut-cake": ["Coconut cake", "Pineapple cake", "Layer cake"],
+    "vanilla-ice-cream": ["Vanilla ice cream", "Ice cream"],
+    "a-la-mode": ["Sundae", "Apple pie", "Ice cream"],
 }
 
 
