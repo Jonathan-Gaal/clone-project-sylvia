@@ -100,7 +100,9 @@ export default function ChatWidget() {
               messages.map((m) => {
                 const text = messageText(m.parts);
                 if (!text) return null; // skip tool-only steps
-                const cited = m.role === "assistant" ? findCitedMenuItems(text) : [];
+                // Only card dishes that have a photo — every shown card has a pic + link.
+                const cited =
+                  m.role === "assistant" ? findCitedMenuItems(text).filter((i) => i.image) : [];
                 return (
                   <div key={m.id} className="sc-msg">
                     <div className={`sc-row sc-${m.role}`}>
