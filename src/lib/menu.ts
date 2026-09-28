@@ -31,6 +31,13 @@ const LOCAL_FALLBACK: Record<string, string> = {
   "banana-pudding": "/packages/dish-banana-pudding.jpg",
   // Plain waffle reuses the real waffle photo from the live menu.
   "waffle": "https://static.spotapps.co/spots/35/ad8233d2d448c7a06e576613715180/medium",
+  // Dishes with no photo on Sylvia's menu — openly-licensed Wikimedia stand-ins
+  // (see scripts/fetch-dish-images.py).
+  "sylvias-sassy-angus-beef-burger": "/packages/dishes/angus-burger.jpg",
+  "soulful-caesar-salad-kale-and-mixed-greens": "/packages/dishes/caesar-salad.jpg",
+  "coconut-pineapple-cake": "/packages/dishes/coconut-cake.jpg",
+  "vanilla-ice-cream": "/packages/dishes/vanilla-ice-cream.jpg",
+  "a-la-mode": "/packages/dishes/a-la-mode.jpg",
 };
 
 // Branded placeholder for the few dishes with no photo anywhere on Sylvia's menu
