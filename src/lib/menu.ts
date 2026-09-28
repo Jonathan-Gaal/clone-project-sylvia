@@ -29,9 +29,16 @@ const LOCAL_FALLBACK: Record<string, string> = {
   "sassy-rice": "/packages/dishes/sassy-rice.jpg",
   "peach-cobbler-waffle": "/packages/dishes/peach-cobbler.jpg",
   "banana-pudding": "/packages/dish-banana-pudding.jpg",
+  // Plain waffle reuses the real waffle photo from the live menu.
+  "waffle": "https://static.spotapps.co/spots/35/ad8233d2d448c7a06e576613715180/medium",
 };
+
+// Branded placeholder for the few dishes with no photo anywhere on Sylvia's menu
+// (the Angus burger, Caesar salad, coconut-pineapple cake, ice cream). The card
+// still shows the dish's real name + price, so every card has a pic + link.
+const PLACEHOLDER = "/packages/dish-placeholder.svg";
 for (const item of MENU) {
-  if (!item.image && LOCAL_FALLBACK[item.slug]) item.image = LOCAL_FALLBACK[item.slug];
+  if (!item.image) item.image = LOCAL_FALLBACK[item.slug] ?? PLACEHOLDER;
 }
 
 /** Link to a specific dish on the cloned menu page (MenuDeepLink scrolls to it). */
