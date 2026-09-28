@@ -1,5 +1,5 @@
 import "server-only";
-import { Pool, type QueryResultRow } from "pg";
+import { Pool, type PoolClient, type QueryResultRow } from "pg";
 
 /**
  * A single shared node-postgres pool. Works against a local Postgres in
@@ -31,6 +31,29 @@ export async function query<T extends QueryResultRow = QueryResultRow>(
   const pool = getPool();
   const result = await pool.query<T>(text, params as never[]);
   return result.rows;
+}
+
+/**
+ * Runs `fn` inside a single transaction on one checked-out connection. Commits on
+ * success, rolls back on any throw, and always releases the client. Use this (not
+ * `query`) when several statements must be atomic or share a connection — e.g. an
+ * advisory lock plus a capacity re-check plus an insert.
+ */
+export async function withTransaction<T>(
+  fn: (client: PoolClient) => Promise<T>,
+): Promise<T> {
+  const client = await getPool().connect();
+  try {
+    await client.query("BEGIN");
+    const result = await fn(client);
+    await client.query("COMMIT");
+    return result;
+  } catch (err) {
+    await client.query("ROLLBACK");
+    throw err;
+  } finally {
+    client.release();
+  }
 }
 
 /** Closes the shared pool. Intended for test teardown / graceful shutdown. */
