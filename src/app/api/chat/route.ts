@@ -13,7 +13,7 @@ import { getSpecials } from "@/lib/specials";
 import { getEvents } from "@/lib/events";
 import { INFO } from "@/lib/info";
 import { SERVICE_TIERS, tiersForPartySize } from "@/lib/packages";
-import { checkAvailability, createTableReservation } from "@/lib/availability";
+import { checkAvailability, createTableReservation, findReservations } from "@/lib/availability";
 import { TableReservationSchema } from "@/lib/validators";
 
 // The tool loop and DB calls need Node; never statically cache this endpoint.
@@ -83,6 +83,24 @@ const tools = {
         return { ...result, note: "Party exceeds the online booking limit — use get_packages." };
       }
       return result;
+    },
+  }),
+
+  check_reservation: tool({
+    description:
+      "Look up a guest's existing table reservation(s) by name, email, and/or phone, optionally narrowed to one date. Ask for at least one before calling — never guess. Name matching is partial and can return several people; email/phone are exact and preferred when the guest has one handy. Returns an empty list if nothing matches.",
+    inputSchema: z.object({
+      name: z.string().optional().describe("Guest name the reservation was made under."),
+      email: z.string().optional().describe("Email the reservation was made under."),
+      phone: z.string().optional().describe("Phone number the reservation was made under."),
+      date: z.string().optional().describe("Narrow to one date, YYYY-MM-DD."),
+    }),
+    execute: async ({ name, email, phone, date }) => {
+      if (!name && !email && !phone) {
+        return { error: "Ask the guest for their name, email, or phone number the reservation was made under." };
+      }
+      const reservations = await findReservations({ name, email, phone, date });
+      return { reservations };
     },
   }),
 

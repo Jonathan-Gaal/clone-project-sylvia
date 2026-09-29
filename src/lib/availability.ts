@@ -169,6 +169,90 @@ export async function availableSlots(
   );
 }
 
+export type ReservationLookup = {
+  id: number;
+  guestName: string;
+  email: string;
+  phone: string | null;
+  partySize: number;
+  reservationDate: string;
+  reservationTime: string;
+  status: "booked" | "cancelled";
+  notes: string | null;
+};
+
+/**
+ * Finds a guest's standalone table reservations (event_id NULL, reservation_time
+ * set) by name, email, and/or phone, optionally narrowed to one date. Read-only.
+ * Returns [] if no identifier is given, rather than scanning every reservation.
+ * Name is a partial, case-insensitive match (least precise of the three — several
+ * guests can share a name, email/phone can't), so callers should prefer email or
+ * phone when the guest has one handy.
+ */
+export async function findReservations(input: {
+  name?: string;
+  email?: string;
+  phone?: string;
+  date?: string;
+}): Promise<ReservationLookup[]> {
+  if (!input.name && !input.email && !input.phone) return [];
+
+  const conditions = ["reservation_time IS NOT NULL"];
+  const params: string[] = [];
+  if (input.name) {
+    params.push(`%${input.name.trim()}%`);
+    conditions.push(`guest_name ILIKE $${params.length}`);
+  }
+  if (input.email) {
+    params.push(input.email.trim().toLowerCase());
+    conditions.push(`lower(email) = $${params.length}`);
+  }
+  if (input.phone) {
+    params.push(input.phone.trim());
+    conditions.push(`phone = $${params.length}`);
+  }
+  if (input.date) {
+    params.push(input.date);
+    conditions.push(`reservation_date = $${params.length}`);
+  }
+
+  const rows = await query<{
+    id: number;
+    guest_name: string;
+    email: string;
+    phone: string | null;
+    party_size: number;
+    reservation_date: Date | string;
+    reservation_time: string;
+    status: "booked" | "cancelled";
+    notes: string | null;
+  }>(
+    `SELECT id, guest_name, email, phone, party_size, reservation_date, reservation_time, status, notes
+       FROM reservations
+      WHERE ${conditions.join(" AND ")}
+      ORDER BY reservation_date DESC, reservation_time DESC
+      LIMIT 10`,
+    params,
+  );
+
+  return rows.map((r) => ({
+    id: r.id,
+    guestName: r.guest_name,
+    email: r.email,
+    phone: r.phone,
+    partySize: r.party_size,
+    // pg returns DATE columns as JS Date objects (in local time) by default;
+    // use UTC parts so the calendar day doesn't shift across a timezone.
+    reservationDate:
+      r.reservation_date instanceof Date
+        ? r.reservation_date.toISOString().slice(0, 10)
+        : String(r.reservation_date).slice(0, 10),
+    reservationTime: r.reservation_time.slice(0, 5),
+    status: r.status,
+    notes: r.notes,
+  }));
+}
+
 export type TableBookingInput = {
   guestName: string;
   email: string;

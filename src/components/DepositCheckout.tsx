@@ -7,8 +7,11 @@ import {
 } from "@stripe/react-stripe-js";
 
 // Module-level singleton: Stripe.js is loaded once for the whole app.
+// Refuse a live publishable key — this app is test-mode only.
 const publishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY;
-const stripePromise = publishableKey ? loadStripe(publishableKey) : null;
+const isLivePublishable = Boolean(publishableKey?.includes("_live_"));
+const stripePromise =
+  publishableKey && !isLivePublishable ? loadStripe(publishableKey) : null;
 
 /**
  * Renders Stripe's embedded Checkout inside the reservation modal. The parent
