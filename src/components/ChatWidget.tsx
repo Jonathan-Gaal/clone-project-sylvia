@@ -224,12 +224,14 @@ const scopedCss = `
 #sylvias-concierge { position: fixed; z-index: 2147483000; }
 #sylvias-concierge * { box-sizing: border-box; }
 
-/* Same column as .sc-panel (right:20px, same width), reaching 20px into
-   the navbar's own 160px band up to the page bottom — just the strip
-   above/below/behind the panel, not the whole page. Light touch: you can
-   still make out shapes, just not read them. */
+/* Same column as .sc-panel (right:20px, same width), reaching ~18px into
+   the navbar's bottom edge (--nav-bottom, kept live by NavScroll — the nav
+   shrinks on scroll, so a fixed px guess drifts out of sync with it) down
+   to the page bottom — just the strip above/below/behind the panel, not
+   the whole page. Light touch: you can still make out shapes, just not
+   read them. */
 #sylvias-concierge .sc-backdrop {
-  position: fixed; top: 140px; right: 20px; bottom: 0;
+  position: fixed; top: calc(var(--nav-bottom, 140px) - 18px); right: 20px; bottom: 0;
   width: min(380px, calc(100vw - 40px));
   background: rgba(20,14,10,.22);
   backdrop-filter: blur(3px);
