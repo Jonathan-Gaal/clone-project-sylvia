@@ -183,18 +183,26 @@ export type ReservationLookup = {
 
 /**
  * Finds a guest's standalone table reservations (event_id NULL, reservation_time
- * set) by email and/or phone, optionally narrowed to one date. Read-only. Returns
- * [] if neither email nor phone is given, rather than scanning every reservation.
+ * set) by name, email, and/or phone, optionally narrowed to one date. Read-only.
+ * Returns [] if no identifier is given, rather than scanning every reservation.
+ * Name is a partial, case-insensitive match (least precise of the three — several
+ * guests can share a name, email/phone can't), so callers should prefer email or
+ * phone when the guest has one handy.
  */
 export async function findReservations(input: {
+  name?: string;
   email?: string;
   phone?: string;
   date?: string;
 }): Promise<ReservationLookup[]> {
-  if (!input.email && !input.phone) return [];
+  if (!input.name && !input.email && !input.phone) return [];
 
   const conditions = ["reservation_time IS NOT NULL"];
   const params: string[] = [];
+  if (input.name) {
+    params.push(`%${input.name.trim()}%`);
+    conditions.push(`guest_name ILIKE $${params.length}`);
+  }
   if (input.email) {
     params.push(input.email.trim().toLowerCase());
     conditions.push(`lower(email) = $${params.length}`);

@@ -132,4 +132,27 @@ describe.runIf(hasDb)("table availability + booking (integration)", () => {
     const noIdentifier = await findReservations({ date: DATE });
     expect(noIdentifier).toHaveLength(0);
   });
+
+  it("finds a reservation by partial, case-insensitive name", async () => {
+    const result = await createTableReservation({
+      guestName: "Johnny Quest",
+      email: TEST_EMAIL,
+      phone: null,
+      partySize: 2,
+      reservationDate: DATE,
+      reservationTime: "19:00",
+      notes: null,
+    });
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+
+    const fullName = await findReservations({ name: "Johnny Quest" });
+    expect(fullName.map((r) => r.id)).toContain(result.id);
+
+    const partialLowerCase = await findReservations({ name: "quest" });
+    expect(partialLowerCase.map((r) => r.id)).toContain(result.id);
+
+    const noMatch = await findReservations({ name: "Race Bannon" });
+    expect(noMatch.find((r) => r.id === result.id)).toBeUndefined();
+  });
 });
