@@ -3,6 +3,7 @@ import { query, endPool, hasDb } from "./db";
 import {
   checkAvailability,
   createTableReservation,
+  findReservations,
   slotsForDate,
   weekdayOf,
 } from "./availability";
@@ -106,5 +107,29 @@ describe.runIf(hasDb)("table availability + booking (integration)", () => {
     expect(late.ok).toBe(false);
     if (late.ok) return;
     expect(late.reason).toBe("closed");
+  });
+
+  it("finds a reservation by email, and nothing with no identifier or a wrong one", async () => {
+    const result = await book(3, "19:00");
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+
+    const byEmail = await findReservations({ email: TEST_EMAIL });
+    expect(byEmail).toHaveLength(1);
+    expect(byEmail[0].id).toBe(result.id);
+    expect(byEmail[0].partySize).toBe(3);
+    expect(byEmail[0].reservationDate).toBe(DATE);
+    expect(byEmail[0].reservationTime).toBe("19:00");
+    expect(byEmail[0].status).toBe("booked");
+
+    // Email matching is case-insensitive.
+    const upperCase = await findReservations({ email: TEST_EMAIL.toUpperCase() });
+    expect(upperCase).toHaveLength(1);
+
+    const wrongEmail = await findReservations({ email: "nobody@example.com" });
+    expect(wrongEmail).toHaveLength(0);
+
+    const noIdentifier = await findReservations({ date: DATE });
+    expect(noIdentifier).toHaveLength(0);
   });
 });

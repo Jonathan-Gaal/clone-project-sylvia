@@ -25,6 +25,7 @@ const SUGGESTIONS = [
   "What's on special today?",
   "Do you have steak?",
   "Book a table for 4 this Friday at 7pm",
+  "Check a reservation",
 ];
 
 function messageText(parts: { type: string }[]): string {
@@ -340,8 +341,12 @@ const scopedCss = `
   text-align: left; padding: 11px 13px; border: 1px solid ${PURPLE};
   background: #fff; color: ${INK}; border-radius: 10px; cursor: pointer;
   font-size: 13.5px; font-family: inherit; min-height: 44px;
+  transition: background .15s ease, box-shadow .15s ease, transform .15s ease;
 }
-#sylvias-concierge .sc-suggest:hover { background: #f2effb; }
+#sylvias-concierge .sc-suggest:hover {
+  background: ${PURPLE}; color: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,.18); transform: translateY(-1px);
+}
 
 #sylvias-concierge .sc-msg { display: flex; flex-direction: column; gap: 8px; }
 #sylvias-concierge .sc-row { display: flex; }

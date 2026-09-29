@@ -13,7 +13,7 @@ import { getSpecials } from "@/lib/specials";
 import { getEvents } from "@/lib/events";
 import { INFO } from "@/lib/info";
 import { SERVICE_TIERS, tiersForPartySize } from "@/lib/packages";
-import { checkAvailability, createTableReservation } from "@/lib/availability";
+import { checkAvailability, createTableReservation, findReservations } from "@/lib/availability";
 import { TableReservationSchema } from "@/lib/validators";
 
 // The tool loop and DB calls need Node; never statically cache this endpoint.
@@ -83,6 +83,23 @@ const tools = {
         return { ...result, note: "Party exceeds the online booking limit — use get_packages." };
       }
       return result;
+    },
+  }),
+
+  check_reservation: tool({
+    description:
+      "Look up a guest's existing table reservation(s) by the email and/or phone they booked with, optionally narrowed to one date. Ask for at least email or phone before calling — never guess. Returns an empty list if nothing matches.",
+    inputSchema: z.object({
+      email: z.string().optional().describe("Email the reservation was made under."),
+      phone: z.string().optional().describe("Phone number the reservation was made under."),
+      date: z.string().optional().describe("Narrow to one date, YYYY-MM-DD."),
+    }),
+    execute: async ({ email, phone, date }) => {
+      if (!email && !phone) {
+        return { error: "Ask the guest for the email or phone number the reservation was made under." };
+      }
+      const reservations = await findReservations({ email, phone, date });
+      return { reservations };
     },
   }),
 
